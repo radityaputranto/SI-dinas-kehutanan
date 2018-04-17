@@ -26,10 +26,10 @@ Route::group(['middleware' => ['web','auth']],function(){
 
 Route::get('/home',function(){
 	if (Auth::user()->admin == 0) {
-		return view('home');
+		return view('user/home');
 	}
 	else{
 		$users['users'] = \App\User::all();
-		return view('adminhome',$users);
+		return view('admin/home',$users);
 	}
 });
