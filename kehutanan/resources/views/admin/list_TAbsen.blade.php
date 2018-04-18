@@ -1,10 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-        <div class="page-wrapper">
-
-
-            
+ <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -14,10 +11,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Daftar Pegawai new</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">List Telat</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan tunjangan </a></li>
-                            <li class="breadcrumb-item active">Daftar Pegawai</li>
+                            <li class="breadcrumb-item active">List Telat</li>
                         </ol>
                     </div>
                     
@@ -43,13 +40,12 @@
                                                 <th>No</th>
                                                 <th>NIP</th>
                                                 <th>Nama</th>
-                                                <th>Gender</th>
                                                 <th>Golongan</th>
                                                 <th>Eselon</th>
                                                 <th>Departemen</th>
-                                                <th>No Telp</th>
-                                                <th>Alamat</th>
-                                                <th>Aksi</th>
+                                                <th>Tanggal</th>
+                                                <th>Absen Masuk</th>
+                                                <th>Denda</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -57,58 +53,48 @@
                                                 <td>1</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/4.jpg')}}" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
+                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
                                                 </td>
-                                                <td>Pria</td>
                                                 <td>II</td>
                                                 <td>II B</td>
                                                 <td><span class="label label-danger">Designer</span> </td>
-                                                <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
+                                                <td>20/1/2018</td>
+                                                <td>07.00</td>
+                                                <td>Rp. 30,000</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/5.jpg')}}" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
+                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
                                                 </td>
-                                                <td>Pria</td>
                                                 <td>II</td>
                                                 <td>II B</td>
                                                 <td><span class="label label-info">Developer</span> </td>
-                                                <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
+                                                <td>21/1/2018</td>
+                                                <td>06.40</td>
+                                                <td>Rp. 10,000</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/6.jpg')}}" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
                                                 </td>
-                                                <td>Pria</td>
                                                 <td>II</td>
                                                 <td>II B</td>
                                                 <td><span class="label label-success">Accountant</span></td>
-                                                <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787/td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
+                                                <td>22/1/2018</td>
+                                                <td>08.30</td>
+                                                <td>Rp. 120,000</td>
                                             </tr>
                                             
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <td colspan="2">
+                                                    <button class="btn btn-outline-info waves-effect waves-light" type="button"><span class="btn-label"><i class="mdi mdi-file-pdf"></i></span>Pdf</button>
+                                                    <button class="btn btn-outline-success waves-effect waves-light" type="button"><span class="btn-label"><i class="mdi mdi-file-excel"></i></span>Excell</button>
                                                 </td>
                                                 <td colspan="7">
                                                     <div class="text-right">
