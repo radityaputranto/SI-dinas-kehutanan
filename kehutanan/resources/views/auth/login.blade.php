@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V15</title>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
 
-    <link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.ico')}}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('dashboard/assets/side_logo.png')}}">
+    <title>Login</title>
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
@@ -28,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css')}}">
 <!--===============================================================================================-->
 </head>
-<body>
+<body style="background: url({{ asset('dashboard/assets/bg_welcome.png')}});>
 
     <div class="limiter">
         <div class="container-login100">
@@ -73,9 +74,9 @@
                         </div>
 
                         <div>
-                            <a href="{{ route('password.request') }}" class="txt1">
+                            <!-- <a href="{{ route('password.request') }}" class="txt1">
                                 Forgot Password?
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 

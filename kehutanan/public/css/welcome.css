@@ -1,0 +1,57 @@
+body {font-family: Lato}
+ 
+h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif;font-weight:800!important}
+ 
+.btn-xl {
+	text-transform: uppercase;
+	padding: 1.5rem 3rem;
+	font-size: .9rem;
+	font-weight: 700;
+	letter-spacing: .1rem
+ }
+ .text-gray{
+ 	color: #4C5364;
+ }
+ .text-orange{
+ 	color: #E26F32;
+ }
+.bg-black {background-color: #000!important}
+ 
+.rounded-pill {border-radius: 5rem}
+ 
+ 
+header.masthead {
+	
+	padding-top: 120px;
+	padding-bottom: 7rem;
+
+	background-size: cover
+ }
+.regis{
+	margin-top: 100px;
+}
+	
+ 
+@media (min-width:992px) {header.masthead}
+ 
+header.masthead .masthead-content .masthead-heading {font-size: 2.5rem;margin-top: 30px;}
+ 
+header.masthead .masthead-content .masthead-subheading {font-size: 2rem}
+ 
+{}
+ 
+	.bg-primary {background-color: #57B846!important}
+ 
+	.btn-primary {background-color: #57B846;border-color:#57B846}
+ 
+		.btn-primary:active,.btn-primary:focus,.btn-primary:hover {background-color: #008467!important;border-color:#008467!important}
+ 
+		.btn-primary:focus {box-shadow: 0 0 0 .2rem rgba(238,9,121,.5)}
+ 
+	.btn-secondary {background-color: #ff6a00;border-color:#ff6a00}
+ 
+		.btn-secondary:active,.btn-secondary:focus,.btn-secondary:hover {background-color: #c50!important;border-color:#c50!important}
+ 
+		.btn-secondary:focus {box-shadow: 0 0 0 .2rem rgba(255,106,0,.5)}
+ 
+ 
