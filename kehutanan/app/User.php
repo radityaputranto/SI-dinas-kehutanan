@@ -14,8 +14,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    /*protected $username = 'NIP_EMP';*/
+    protected $primaryKey = 'NIP_EMP';
+    protected $table = 'pegawai';
     protected $fillable = [
-        'name', 'email', 'password','admin',
+        // 'name', 'email', 'password','admin',
+        
+        'NIP_EMP', 'NAMA_EMP','email', 'password','admin',
+
+
     ];
 
     /**

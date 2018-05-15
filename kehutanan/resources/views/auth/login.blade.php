@@ -44,8 +44,8 @@
                     {{ csrf_field() }}
 
                     <div class="wrap-input100 validate-input m-b-26 form-group{{ $errors->has('email') ? ' has-error' : '' }}" data-validate="Username is required">
-                        <span class="label-input100">Username</span>
-                        <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Enter username">
+                        <span class="label-input100">Email</span>
+                        <input id="number" type="text" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Enter username">
                         <span class="focus-input100"></span>
                         @if ($errors->has('email'))
                                     <span class="help-block">

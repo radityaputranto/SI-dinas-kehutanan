@@ -31,7 +31,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Seluruh Pegawai</h4>
+                                <h4 class="card-title">Daftar Lembur Pegawai</h4>
                                 <h6 class="card-subtitle"></h6>
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">

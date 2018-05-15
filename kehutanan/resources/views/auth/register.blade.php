@@ -11,25 +11,39 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                        <div class="form-group{{ $errors->has('NIP_EMP') ? ' has-error' : '' }}">
+                            <label for="NIP_EMP" class="col-md-4 control-label">NIP EMP</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="number" class="form-control" name="NIP_EMP" value="{{ old('NIP_EMP') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('NIP_EMP'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('NIP_EMP') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('NAMA_EMP') ? ' has-error' : '' }}">
+                            <label for="NAMA_EMP" class="col-md-4 control-label">Nama EMP</label>
+
+                            <div class="col-md-6">
+                                <input id="NAMA_EMP" type="string" class="form-control" name="NAMA_EMP" value="{{ old('NAMA_EMP') }}" required>
+
+                                @if ($errors->has('NAMA_EMP'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('NAMA_EMP') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">Email EMP</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="name" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">

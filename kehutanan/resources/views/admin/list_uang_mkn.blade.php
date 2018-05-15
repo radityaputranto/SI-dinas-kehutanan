@@ -11,10 +11,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">List Tunjangan Daerah</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">List Uang Makan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan tunjangan </a></li>
-                            <li class="breadcrumb-item active">List Tunjangan Daerah</li>
+                            <li class="breadcrumb-item active">List Uang Makan</li>
                         </ol>
                     </div>
                     
@@ -31,7 +31,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Seluruh Pegawai</h4>
+                                <h4 class="card-title">Daftar Uang Makan Pegawai</h4>
                                 <h6 class="card-subtitle"></h6>
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
@@ -53,7 +53,7 @@
                                                 <td>1</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
+                                                    <a href="javascript:void(0)">Genelia Deshmukh</a>
                                                 </td>
                                                 <td>Pria</td>
                                                 <td>II</td>
@@ -62,32 +62,7 @@
                                                 <td>Rp. 1,725,250</td>
                                                 <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
-                                            </tr>
+                                        
                                             
                                         </tbody>
                                         <tfoot>

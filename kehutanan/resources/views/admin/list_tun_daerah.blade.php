@@ -53,7 +53,7 @@
                                                 <td>1</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
+                                                    <a href="javascript:void(0)">Genelia Deshmukh</a>
                                                 </td>
                                                 <td>Pria</td>
                                                 <td>II</td>
@@ -62,32 +62,7 @@
                                                 <td>Rp. 1,725,250</td>
                                                 <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
-                                            </tr>
+                                            
                                             
                                         </tbody>
                                         <tfoot>

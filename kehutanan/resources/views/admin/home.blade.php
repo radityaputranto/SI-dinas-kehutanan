@@ -48,7 +48,7 @@
                                                 <th>Eselon</th>
                                                 <th>Departemen</th>
                                                 <th>No Telp</th>
-                                                <th>Alamat</th>
+                                                <th>Detail</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -57,53 +57,23 @@
                                                 <td>1</td>
                                                 <td>21031510353</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/4.jpg')}}" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
+                                                    <a href="javascript:void(0)"> Lina Meritha</a>
+                                                </td>   
                                                 <td>Pria</td>
                                                 <td>II</td>
                                                 <td>II B</td>
                                                 <td><span class="label label-danger">Designer</span> </td>
                                                 <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
+                                                <td><a href=""><button class="btn btn-rounded btn-info">Detail</button></a></td>
+                                                <td>
+                                                    <a href=""><button class="btn btn-rounded btn-success">Edit</button></a>
+
+                                                    
                                                 <td>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/5.jpg')}}" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>21031510353</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="{{ asset('dashboard/images/users/6.jpg')}}" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>08770321654897</td>
-                                                <td>jl.kaliwaron no 32 kenjeran Surabaya 61787/td>
-                                                <td><a href=""><button class="btn btn-rounded btn-success">Edit</button></a></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
+                                            
                                             
                                         </tbody>
                                         <tfoot>
