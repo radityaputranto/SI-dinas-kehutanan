@@ -150,11 +150,12 @@
                                                      <i class="fa fa-power-off"></i> Logout</a>
                                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                     {{ csrf_field() }}
-                                                    </form> -->
+                                                    </form> 
+                                                    -->
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <i class="fa fa-power-off"></i> Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -190,10 +191,10 @@
                             
                             
                             <div class="dropdown-divider"></div> <!-- <a href="{{ route('logout') }}" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a> -->
-                                                                    <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            
+                                            document.getElementById('logout-form').submit();">
+                                           <i class="fa fa-power-off"></i> Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -236,11 +237,12 @@
             <div class="sidebar-footer">
                
                 <!-- item-->
-                <a href="{{ route('logout') }}" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i>
                                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                             Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
