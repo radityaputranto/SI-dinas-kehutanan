@@ -43,9 +43,9 @@ Route::get('profil','ProfilController@index');
 Route::resource('emp', 'AdminEmpController');
 Route::get('add_emp','AdminEmpController@create');
 /*Route::post('add_emp','AdminEmpController@store');*/
-Route::get('edit_emp',function(){
+/*Route::get('edit_emp',function(){
 	return view('admin/edit_emp');
-	});
+	});*/
 Route::get('add_event','AddEventController@index');
 Route::get('list_lembur','ListLemburController@index');
 Route::get('list_telat','ListTelatController@index');

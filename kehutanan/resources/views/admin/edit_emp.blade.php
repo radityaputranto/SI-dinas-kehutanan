@@ -38,6 +38,9 @@
                                 <form class="form-horizontal p-t-20" action="{{ route('emp.update',$NIP_EMP) }}"  method="post">
                                     {{csrf_field()}}
 
+                                    <input name="_method" type="hidden" value="PATCH">
+
+                                    
                                     <div class="form-group row {{ $errors->has('NAMA_EMP') ? 'has-error' : '' }}">
                                         <label for="nama_lengkap" class="col-sm-3 control-label">Nama Lengkap*</label>
                                         <div class="col-sm-9">

@@ -87,9 +87,10 @@ class AdminEmpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($NIP_EMP)
     {
-        //
+         $emp = Pegawai::findOrFail($NIP_EMP);
+        return view('admin.detail_emp',compact('emp','NIP_EMP'));
     }
 
     /**
@@ -115,9 +116,9 @@ class AdminEmpController extends Controller
     {
         $emp = Pegawai::find($NIP_EMP);
         $this->validate($request, [
-            'NAMA_EMP' => 'required|unique:pegawai',
-            'NIP_EMP' => 'required|unique:pegawai',
-            'email' => 'required|unique:pegawai',
+            'NAMA_EMP' => 'required',
+            'NIP_EMP' => 'required',
+            'email' => 'required',
             'password' => 'required',
             'ID_DEPT' => 'required',
             'GOLONGAN_EMP' => 'required',

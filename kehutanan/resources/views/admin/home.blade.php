@@ -67,7 +67,9 @@
                                                     {{$emp['ID_DEPT']}}
                                                     <!-- <span class="label label-danger">Designer</span> --> </td>
                                                 <td>{{$emp['NOTELP_EMP']}}</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-info">Detail</button></a>
+                                                <td>
+                                                    <!-- <button class="btn btn-rounded btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button">Detail</button> -->
+                                                     <a href="{{action('AdminEmpController@show', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button">Detail</button></a>
                                                 </td>
 
                                                 <td>
@@ -111,8 +113,39 @@
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-               
+
+                <!-- modal detail -->
+               <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel1">New message</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Recipient:</label>
+                                        <input type="text" class="form-control" id="recipient-name1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Message:</label>
+                                        <textarea class="form-control" id="message-text1"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- end  modal detail -->
             </div>
+            
+
+
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
