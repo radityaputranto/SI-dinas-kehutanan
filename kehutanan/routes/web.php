@@ -40,7 +40,9 @@ Route::get('uang_mkn','UangMknController@index');
 Route::get('profil','ProfilController@index');
 
 /*admin route*/
-Route::get('add_emp','AddEmpController@index');
+Route::resource('emp', 'AdminEmpController');
+Route::get('add_emp','AdminEmpController@create');
+/*Route::post('add_emp','AdminEmpController@store');*/
 Route::get('edit_emp',function(){
 	return view('admin/edit_emp');
 	});

@@ -256,7 +256,10 @@
     <script src="{{ asset('dashboard/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript')}}"></script>
     <!--FooTable init-->
     <script src="{{ asset('dashboard/js/footable-init.js')}}"></script>
-    
+    <script src="{{ asset('js/sweetalert.min.js')}}"></script>
+
+    <!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
 </body>
 
 </html>

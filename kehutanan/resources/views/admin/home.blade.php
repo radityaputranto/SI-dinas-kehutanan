@@ -40,7 +40,7 @@
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                
                                                 <th>NIP</th>
                                                 <th>Nama</th>
                                                 <th>Gender</th>
@@ -53,27 +53,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                             @foreach($users as $emp)
                                             <tr>
-                                                <td>1</td>
-                                                <td>21031510353</td>
+                                                {{$emp['']}}
+                                                <td>{{$emp['NIP_EMP']}}</td>
                                                 <td>
-                                                    <a href="javascript:void(0)"> Lina Meritha</a>
+                                                     {{$emp['NAMA_EMP']}}
                                                 </td>   
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>08770321654897</td>
-                                                <td><a href=""><button class="btn btn-rounded btn-info">Detail</button></a></td>
+                                                <td>{{$emp['GENDER']}}</td>
+                                                <td>{{$emp['GOLONGAN_EMP']}}</td>
+                                                <td>{{$emp['ESELON_EMP']}}</td>
                                                 <td>
-                                                    <a href=""><button class="btn btn-rounded btn-success">Edit</button></a>
+                                                    {{$emp['ID_DEPT']}}
+                                                    <!-- <span class="label label-danger">Designer</span> --> </td>
+                                                <td>{{$emp['NOTELP_EMP']}}</td>
+                                                <td><a href=""><button class="btn btn-rounded btn-info">Detail</button></a>
+                                                </td>
+
+                                                <td>
+                                                    <a href="{{action('AdminEmpController@edit', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-success">Edit</button></a>
 
                                                     
                                                 <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                                    <form action="{{action('AdminEmpController@destroy', $emp['NIP_EMP'])}}" method="post">
+                                                        {{csrf_field()}}
+                                                        <input name="_method" type="hidden" value="DELETE">
+                                                        <button type="submit" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                                        
+                                                    </form>
+
+                                                    
                                                 </td>
                                             </tr>
-                                            
+                                            @endforeach 
                                             
                                         </tbody>
                                         <tfoot>

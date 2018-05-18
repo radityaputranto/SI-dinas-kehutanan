@@ -63,7 +63,7 @@
         swal({   
             title: "Govinda!",   
             text: "Recently joined twitter",   
-            imageUrl: "../assets/images/users/1.jpg" 
+            imageUrl: "{{ asset('dashboard/assets/side_logo.png')}}" 
         });
     });
 
