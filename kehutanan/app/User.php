@@ -26,7 +26,13 @@ class User extends Authenticatable
 
     ];
 
-    /**
+    public function dept()
+    {
+
+        return $this->hasOne(Department::class, 'ID_DEPT', 'ID_DEPT');
+
+    }
+    /**11
      * The attributes that should be hidden for arrays.
      *
      * @var array

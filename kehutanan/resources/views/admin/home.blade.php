@@ -34,10 +34,14 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Seluruh Pegawai</h4>
+                               
                                 <h6 class="card-subtitle"></h6>
+
+
+
                                 <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+
+                                    <table id="demo-foo-addrow2" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
                                                 
@@ -52,6 +56,20 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                                                            <div class="m-t-40">
+                                        <div class="d-flex">
+                                            <div class="mr-auto">
+                                                <div class="form-group">
+                                                     <h4 class="card-title">Daftar Seluruh Pegawai</h4>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div class="form-group">
+                                                    <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                         <tbody>
                                              @foreach($users as $emp)
                                             <tr>
@@ -64,7 +82,8 @@
                                                 <td>{{$emp['GOLONGAN_EMP']}}</td>
                                                 <td>{{$emp['ESELON_EMP']}}</td>
                                                 <td>
-                                                    {{$emp['ID_DEPT']}}
+                                                    {{$emp['dept']['NAMA_DEPT']}}
+                                                    <!-- {{$emp['ID_DEPT']}} -->
                                                     <!-- <span class="label label-danger">Designer</span> --> </td>
                                                 <td>{{$emp['NOTELP_EMP']}}</td>
                                                 <td>

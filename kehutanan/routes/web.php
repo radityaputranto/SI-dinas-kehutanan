@@ -23,7 +23,9 @@ Route::get('/home',function(){
 		return view('user/home');
 	}
 	else{
-		$users['users'] = \App\User::all();
+		//admin
+		$users['users'] = \App\User::with('dept')->get();
+		/*return $users;*/
 		return view('admin/home',$users);
 	}
 });

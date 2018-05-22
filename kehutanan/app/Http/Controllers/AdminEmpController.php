@@ -16,6 +16,7 @@ class AdminEmpController extends Controller
     public function index()
     {
         $emps = Pegawai::all()->toArray();
+        
          return view('admin.home',compact('emps'));
     }
 

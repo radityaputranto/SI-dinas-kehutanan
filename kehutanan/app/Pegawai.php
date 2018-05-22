@@ -17,5 +17,11 @@ class Pegawai extends Model
 
 
     ];
+
+
+    public function dept()
+    {
+    	return $this->belongsTo(Department::class);
+    }
 /*    protected $dates = ['deleted_at'];*/
 }
