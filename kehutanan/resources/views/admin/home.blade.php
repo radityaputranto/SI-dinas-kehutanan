@@ -110,15 +110,15 @@
                                                 <td>{{$emp['NOTELP_EMP']}}</td>
                                                 <td>
                                                     <!-- <button class="btn btn-rounded btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button">Detail</button> -->
-                                                     <a href="{{action('admin/AdminEmpController@show', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button">Detail</button></a>
+                                                     <a href="{{action('Admin\AdminEmpController@show', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button">Detail</button></a>
                                                 </td>
 
                                                 <td>
-                                                    <a href="{{action('admin/AdminEmpController@edit', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-success">Edit</button></a>
+                                                    <a href="{{action('Admin\AdminEmpController@edit', $emp['NIP_EMP'])}}"><button class="btn btn-rounded btn-success">Edit</button></a>
 
                                                     
                                                 <td>
-                                                    <form action="{{action('admin/AdminEmpController@destroy', $emp['NIP_EMP'])}}" method="post">
+                                                    <form action="{{action('Admin\AdminEmpController@destroy', $emp['NIP_EMP'])}}" method="post">
                                                         {{csrf_field()}}
                                                         <input name="_method" type="hidden" value="DELETE">
                                                         <button type="submit" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>

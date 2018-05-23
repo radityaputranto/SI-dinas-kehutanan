@@ -42,8 +42,8 @@ Route::get('uang_mkn','user\UangMknController@index');
 Route::get('profil','user\ProfilController@index');
 
 /*admin route*/
-Route::resource('emp', 'admin\AdminEmpController');
-Route::get('add_emp','admin\AdminEmpController@create');
+Route::resource('emp', 'Admin\AdminEmpController');
+Route::get('add_emp','Admin\AdminEmpController@create');
 /*Route::post('add_emp','AdminEmpController@store');*/
 Route::get('input_absen',function(){
 	return view('admin/input_absensi');
