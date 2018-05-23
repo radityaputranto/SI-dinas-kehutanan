@@ -35,7 +35,7 @@
                                     <h4 class="card-title m-t-10">{{$emp->NAMA_EMP}}</h4>
                                     <h6>Gender : {{$emp->GENDER}}</h6>
                                     <H6>NIP : {{$emp->NIP_EMP}} </H6>
-                                    <H6>DEPARTMENT : {{$emp->NAMA_DEPT}} </H6>
+                                    <H6>DEPARTMENT : {{$emp['dept']['NAMA_DEPT']}} </H6>
                                     
                                     <small class="text-muted p-t-30 db">Tgl Menjabat : {{$emp->CREATED_AT}}</small>
                                     

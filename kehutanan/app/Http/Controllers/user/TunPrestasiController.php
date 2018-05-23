@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ListPulCptController extends Controller
+class TunPrestasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ListPulCptController extends Controller
      */
     public function index()
     {
-        return view('admin.list_PulCpt');
+        return view('user.tun_prestasi');
     }
 
     /**

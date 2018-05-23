@@ -1,10 +1,10 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TunPrestasiController extends Controller
+class TunDaerahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class TunPrestasiController extends Controller
      */
     public function index()
     {
-        return view('user.tun_prestasi');
+        return view('user.tun_daerah');
     }
 
     /**

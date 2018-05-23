@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ListTUnPresController extends Controller
+class UangMknController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,9 @@ class ListTUnPresController extends Controller
      */
     public function index()
     {
-        return view('admin.list_tun_prestasi');
+        return view('user.uang_mkn');
     }
+
     /**
      * Show the form for creating a new resource.
      *

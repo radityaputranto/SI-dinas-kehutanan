@@ -162,7 +162,10 @@
                             <a  href="{{url('home')}}" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Daftar Pegawai </span></a>
                         </li>
                         <li>
-                            <a  href="{{url('add_emp')}}" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu">Tambah Pegawai</span></a>
+                            <a  href="{{url('input_absen')}}" aria-expanded="false"><i class="mdi mdi-calendar-clock"></i><span class="hide-menu">Input Absensi</span></a>
+                        </li> 
+                        <li>
+                            <a  href="{{url('add_emp')}}" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Tambah Pegawai</span></a>
                         </li>        
                         <li>
                             <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timetable"></i><span class="hide-menu">Absensi Pegawai</span></a>

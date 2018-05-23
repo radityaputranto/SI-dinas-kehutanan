@@ -35,25 +35,25 @@ Route::get('','Controller@index');
 */
 /*user route*/
 /*user route*/
-Route::get('absensi','AbsensiController@index');
-Route::get('tun_daerah','TunDaerahController@index');
-Route::get('tun_pres','TunPrestasiController@index');
-Route::get('uang_mkn','UangMknController@index');
-Route::get('profil','ProfilController@index');
+Route::get('absensi','user\AbsensiController@index');
+Route::get('tun_daerah','user\TunDaerahController@index');
+Route::get('tun_pres','user\TunPrestasiController@index');
+Route::get('uang_mkn','user\UangMknController@index');
+Route::get('profil','user\ProfilController@index');
 
 /*admin route*/
-Route::resource('emp', 'AdminEmpController');
-Route::get('add_emp','AdminEmpController@create');
+Route::resource('emp', 'admin\AdminEmpController');
+Route::get('add_emp','admin\AdminEmpController@create');
 /*Route::post('add_emp','AdminEmpController@store');*/
-/*Route::get('edit_emp',function(){
-	return view('admin/edit_emp');
-	});*/
-Route::get('add_event','AddEventController@index');
-Route::get('list_lembur','ListLemburController@index');
-Route::get('list_telat','ListTelatController@index');
-Route::get('list_pul_cpt','ListPulCptController@index');
-Route::get('list_tdk_absen','ListTAbsenController@index');
-Route::get('list_tdk_senam','ListTSenamController@index');
-Route::get('list_tun_daerah','ListTunDaerahController@index');
-Route::get('list_tun_prestasi','ListTunPresController@index');
-Route::get('list_uang_mkn','ListUangMknController@index');
+Route::get('input_absen',function(){
+	return view('admin/input_absensi');
+	});
+Route::get('add_event','admin\AddEventController@index');
+Route::get('list_lembur','admin\ListLemburController@index');
+Route::get('list_telat','admin\ListTelatController@index');
+Route::get('list_pul_cpt','admin\ListPulCptController@index');
+Route::get('list_tdk_absen','admin\ListTAbsenController@index');
+Route::get('list_tdk_senam','admin\ListTSenamController@index');
+Route::get('list_tun_daerah','admin\ListTunDaerahController@index');
+Route::get('list_tun_prestasi','admin\ListTunPresController@index');
+Route::get('list_uang_mkn','admin\ListUangMknController@index');

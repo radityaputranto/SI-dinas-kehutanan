@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class UangMknController extends Controller
+class ListPulCptController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class UangMknController extends Controller
      */
     public function index()
     {
-        return view('user.uang_mkn');
+        return view('admin.list_PulCpt');
     }
 
     /**

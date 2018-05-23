@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ListUangMknController extends Controller
+class ListTAbsenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ListUangMknController extends Controller
      */
     public function index()
     {
-        return view('admin.list_uang_mkn');
+        return view('admin.list_TAbsen');
     }
 
     /**
