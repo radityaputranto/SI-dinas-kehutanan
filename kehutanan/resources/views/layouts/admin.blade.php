@@ -164,9 +164,9 @@
                         <li>
                             <a  href="{{url('input_absen')}}" aria-expanded="false"><i class="mdi mdi-calendar-clock"></i><span class="hide-menu">Input Absensi</span></a>
                         </li> 
-                        <li>
+<!--                         <li>
                             <a  href="{{url('add_emp')}}" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Tambah Pegawai</span></a>
-                        </li>        
+                        </li>  -->       
                         <li>
                             <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timetable"></i><span class="hide-menu">Absensi Pegawai</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -177,17 +177,18 @@
                                 <li><a href="{{url('list_tdk_senam')}}">Tidak Senam</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a  href="{{url('list_tunjangan')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
-                        </li>
+
                         
-<!--                         <li>
-                            <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
+                        <li>
+                            <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan Pegawai</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('list_tun_daerah')}}">Daerah</a></li>
                                 <li><a href="{{url('list_tun_prestasi')}}">Prestasi</a></li>
                             </ul>
-                        </li> -->
+                        </li>
+                        <li>
+                            <a  href="{{url('list_tunjangan')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
+                        </li>                        
                         <li>
                             <a href="{{url('list_uang_mkn')}}" aria-expanded="false"><i class="mdi mdi-food"></i><span class="hide-menu">List Uang Makan</span></a>
                         </li><li>

@@ -20,7 +20,12 @@
                             <li class="breadcrumb-item active">Daftar Pegawai</li>
                         </ol>
                     </div>
-                    
+                    <div class="col-md-6 col-4 align-self-center">
+                        
+                        
+                        <a  href="{{url('add_emp')}}"  class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Tambah Pegawai</span></a>
+                        
+                    </div>                    
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->

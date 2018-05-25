@@ -124,6 +124,25 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="form-group row form-group row {{ $errors->has('ESELON_EMP') ? 'has-error' : '' }}">
+                                        <label for="eselon" class="col-sm-3 control-label">Eselon</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="mdi mdi-label-outline"></i></div>
+                                                <select class="form-control custom-select" id="golongan" name="ESELON_EMP">
+                                                            <option value="Staf">Staf</option>
+                                                            <option value="Eselon IV">Eselon IV</option>
+                                                            <option value="Eselon III">Eselon III</option>
+                                                            <option value="Eselon II">Eselon II</option>
+                                                            <option value="Eselon I">Eselon I</option>
+                                                </select>
+                                            </div>
+                                            @if ($errors->has('ESELON_EMP'))
+                                                <span class="help-block">{{ $errors->first('ESELON_EMP') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    
                                     <div class="form-group row form-group row {{ $errors->has('GOLONGAN_EMP') ? 'has-error' : '' }}">
                                         <label for="golongan" class="col-sm-3 control-label">Golongan</label>
                                         <div class="col-sm-9">
@@ -131,32 +150,26 @@
                                                 <div class="input-group-addon"><i class="mdi mdi-label"></i></div>
                                                 <select class="form-control custom-select" id="golongan"  name="GOLONGAN_EMP">
                                                             <option value="I A">I A</option>
-                                                            <option value="II A">II A</option>
-                                                            <option value="III A">III A</option>
                                                             <option value="I B">I B</option>
+                                                            <option value="I C">I C</option>
+                                                            <option value="I D">I D</option>
+                                                            <option value="II A">II A</option>
                                                             <option value="II B">II B</option>
+                                                            <option value="II C">II C</option>
+                                                            <option value="II D">II D</option>
+                                                            <option value="III A">III A</option>
+                                                            <option value="III B">III B</option>
+                                                            <option value="III C">III C</option>
+                                                            <option value="III D">III D</option>
+                                                            <option value="IV A">IV A</option>
+                                                            <option value="IV B">IV B</option>
+                                                            <option value="IV C">IV C</option>
+                                                            <option value="IV D">IV D</option>
+                                                            <option value="IV E">IV E</option>
                                                 </select>
                                             </div>
                                             @if ($errors->has('GOLONGAN_EMP'))
                                                 <span class="help-block">{{ $errors->first('GOLONGAN_EMP') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="form-group row form-group row {{ $errors->has('ESELON_EMP') ? 'has-error' : '' }}">
-                                        <label for="eselon" class="col-sm-3 control-label">Eselon</label>
-                                        <div class="col-sm-9">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="mdi mdi-label-outline"></i></div>
-                                                <select class="form-control custom-select" id="golongan" name="ESELON_EMP">
-                                                            <option value="I A">I A</option>
-                                                            <option value="II A">II A<</option>
-                                                            <option value="III A">III A</option>
-                                                            <option value="I B">I B</option>
-                                                            <option value="II B">II B</option>
-                                                </select>
-                                            </div>
-                                            @if ($errors->has('ESELON_EMP'))
-                                                <span class="help-block">{{ $errors->first('ESELON_EMP') }}</span>
                                             @endif
                                         </div>
                                     </div>
