@@ -2,6 +2,9 @@
 
 @section('content')
         <div class="page-wrapper">
+
+
+            
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -11,10 +14,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">List Tunjangan Daerah</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Daftar Tunjagnan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan tunjangan </a></li>
-                            <li class="breadcrumb-item active">List Tunjangan Daerah</li>
+                            <li class="breadcrumb-item active">Daftar Tunjagnan</li>
                         </ol>
                     </div>
                     
@@ -31,40 +34,52 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Seluruh Pegawai</h4>
+                               
                                 <h6 class="card-subtitle"></h6>
+
+
+
                                 <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+
+                                    <table id="demo-foo-addrow2" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>NIP</th>
-                                                <th>Nama</th>
                                                 
-                                                <th>Golongan</th>
                                                 <th>Eselon</th>
-                                                <th>Departemen</th>
-                                                <th>Tunjangan</th>
-                                                <th>Tunjangan</th>
-                                                <th>Aksi</th>
+                                                <th>Golongan</th>
+                                                <th>Tunjangan Prsetasi</th>
+                                                <th>Tunjangan Daerah</th>
+                                                <th> </th>
                                             </tr>
                                         </thead>
+                                    <div class="m-t-40">
+                                        <div class="d-flex">
+                                            <div class="mr-auto">
+                                                <div class="form-group">
+                                                     <h4 class="card-title">Daftar Tunjagan Pegawai</h4>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div class="form-group">
+                                                    <!-- <a type="button" class="btn btn-info waves-effect waves-light" href="{{url('add_tunjangan')}}">add</a> -->
+                                                    <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                         <tbody>
+                                             @foreach($tunjangan as $tun)
                                             <tr>
-                                                <td>1</td>
-                                                <td>21031510353</td>
+                                               
+                                                <td>{{$tun['eselon']}}</td>
+                                                <td>{{$tun['golongan']}}</td>
+                                                <td>Rp. {{$tun['tun_daerah']}}</td>
+                                                <td>Rp. {{$tun['tun_prestasi']}}</td>
                                                 <td>
-                                                    <a href="javascript:void(0)">Genelia Deshmukh</a>
-                                                </td>
-                                              
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td>Rp. 1,725,250</td>
-                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
+                                                    <a href="{{action('Admin\TunjanganController@edit', $tun['id_tunjangan'])}}"><button class="btn btn-rounded btn-success">Edit</button></a>
+                                                
                                             </tr>
-                                            
+                                            @endforeach 
                                             
                                         </tbody>
                                         <tfoot>
@@ -85,13 +100,11 @@
                     </div>
                 </div>
 
-                
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
                
             </div>
+            
+
+
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

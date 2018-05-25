@@ -178,12 +178,16 @@
                             </ul>
                         </li>
                         <li>
+                            <a  href="{{url('list_tunjangan')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
+                        </li>
+                        
+<!--                         <li>
                             <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('list_tun_daerah')}}">Daerah</a></li>
                                 <li><a href="{{url('list_tun_prestasi')}}">Prestasi</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{url('list_uang_mkn')}}" aria-expanded="false"><i class="mdi mdi-food"></i><span class="hide-menu">List Uang Makan</span></a>
                         </li><li>

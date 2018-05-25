@@ -44,6 +44,11 @@ Route::get('profil','user\ProfilController@index');
 /*admin route*/
 Route::resource('emp', 'Admin\AdminEmpController');
 Route::get('add_emp','Admin\AdminEmpController@create');
+
+Route::resource('tunjangan', 'Admin\TunjanganController');
+Route::get('add_tunjangan','Admin\TunjanganController@create');
+Route::get('list_tunjangan','Admin\TunjanganController@index');
+
 /*Route::post('add_emp','AdminEmpController@store');*/
 Route::get('input_absen',function(){
 	return view('admin/input_absensi');
