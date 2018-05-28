@@ -38,6 +38,7 @@ class TunjanganController extends Controller
      */
     public function store(Request $request)
     {
+        alert()->error('Pastikan input terisi ','Gagal Menyimpan Data');
         $tunjangan = $this->validate($request, [
             
             'ESELON' => 'required',
@@ -99,6 +100,7 @@ class TunjanganController extends Controller
      */
     public function update(Request $request, $id_tunjangan)
     {
+        alert()->error('Pastikan input terisi ','Gagal Menyimpan Data');
         $tunjangan = Tunjangan::find($id_tunjangan);
         $this->validate($request, [
             'ESELON' => 'required',
@@ -113,7 +115,8 @@ class TunjanganController extends Controller
           $tunjangan->tun_prestasi = $request->get('TUN_PRESTASI');
 
         $tunjangan->save();
-        return redirect('list_tunjangan')->with('success','Product has been updated');
+        alert()->success( 'Data Tunjangan Berhasil di Update','Tunjangan telah Terupdate');
+        return redirect('list_tunjangan');
     
     }
 

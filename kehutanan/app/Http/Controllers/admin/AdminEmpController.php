@@ -39,6 +39,7 @@ class AdminEmpController extends Controller
      */
     public function store(Request $request)
     {
+        alert()->error('Pastikan input terisi dan unique','Gagal Menyimpan Data');
         $emp = $this->validate($request, [
             'NAMA_EMP' => 'required|unique:pegawai',
             'NIP_EMP' => 'required|unique:pegawai',
@@ -78,7 +79,7 @@ class AdminEmpController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 */      /*return back()->with('success', 'Product has been added');*/
-        alert()->success('You have been logged out.', 'Good bye!');
+        alert()->success( 'Data pegawai baru telah tersimapan di database','Data Tersimpan');
         return redirect('home');
         /*return redirect('home')->with('message', 'Artikel berhasil dibuat!');*/
     }
@@ -116,6 +117,7 @@ class AdminEmpController extends Controller
      */
     public function update(Request $request, $NIP_EMP)
     {
+        alert()->error('Pastikan input terisi dan unique','Gagal Menyimpan Data');
         $emp = Pegawai::find($NIP_EMP);
         $this->validate($request, [
             'NAMA_EMP' => 'required',
@@ -140,7 +142,8 @@ class AdminEmpController extends Controller
           $emp->ALAMAT_EMP = $request->get('ALAMAT_EMP');
 
         $emp->save();
-        return redirect('home')->with('success','Product has been updated');
+        alert()->success( 'Data pegawai baru telah tersimapan di database','Update Berhasil');
+        return redirect('home');
     
     }
 

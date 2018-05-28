@@ -248,6 +248,7 @@
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('dashboard/js/jquery.slimscroll.js')}}"></script>
     <!--Wave Effects -->
+
     <script src="{{ asset('dashboard/js/waves.js')}}"></script>
     <!--Menu sidebar -->
     <script src="{{ asset('dashboard/js/sidebarmenu.js')}}"></script>
@@ -268,6 +269,7 @@
     <script src="{{ asset('js/sweetalert.min.js')}}"></script>
 
     <!-- Include this after the sweet alert js file -->
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     @include('sweet::alert')
 </body>
 
