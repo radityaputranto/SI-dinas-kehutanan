@@ -194,6 +194,16 @@
                         </li><li>
                             <a href="{{url('add_event')}}" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">Tambah Event</span></a>
                         </li>
+
+                        </li><li>
+                            <a href="{{url('data_lembur')}}" aria-expanded="false"><i class="mdi mdi-alarm-plus"></i><span class="hide-menu">Lembur</span></a>
+                        </li>
+
+
+                        </li><li>
+                            <a href="{{url('data_potongan')}}" aria-expanded="false"><i class="mdi mdi-cash-usd"></i><span class="hide-menu">Potongan</span></a>
+                        </li>
+                        
                         
                         
                     </ul>

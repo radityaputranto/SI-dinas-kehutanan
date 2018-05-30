@@ -49,12 +49,21 @@ Route::resource('tunjangan', 'Admin\TunjanganController');
 Route::get('add_tunjangan','Admin\TunjanganController@create');
 Route::get('list_tunjangan','Admin\TunjanganController@index');
 
+Route::resource('lembur', 'Admin\LemburController');
+Route::get('add_lembur','Admin\LemburController@create');
+Route::get('data_lembur','Admin\LemburController@index');
+
+Route::resource('potongan', 'Admin\PotonganController');
+Route::get('add_potongan','Admin\PotonganController@create');
+Route::get('data_potongan','Admin\PotonganController@index');
+
+
 /*Route::post('add_emp','AdminEmpController@store');*/
 Route::get('input_absen',function(){
 	return view('admin/input_absensi');
 	});
 Route::get('add_event','admin\AddEventController@index');
-Route::get('list_lembur','admin\ListLemburController@index');
+//Route::get('list_lembur','admin\ListLemburController@index');
 Route::get('list_telat','admin\ListTelatController@index');
 Route::get('list_pul_cpt','admin\ListPulCptController@index');
 Route::get('list_tdk_absen','admin\ListTAbsenController@index');
