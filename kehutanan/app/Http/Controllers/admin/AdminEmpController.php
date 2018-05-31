@@ -80,7 +80,7 @@ class AdminEmpController extends Controller
         ]);
 */      /*return back()->with('success', 'Product has been added');*/
         alert()->success( 'Data pegawai baru telah tersimapan di database','Data Tersimpan');
-        return redirect('home');
+        return redirect('add_emp');
         /*return redirect('home')->with('message', 'Artikel berhasil dibuat!');*/
     }
 

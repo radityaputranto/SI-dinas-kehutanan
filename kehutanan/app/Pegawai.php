@@ -11,6 +11,7 @@ class Pegawai extends Model
    /* use SoftDeletes;*/
  	protected $table = 'pegawai';
  	protected $primaryKey = 'NIP_EMP';
+
     protected $fillable = [
         
         'NAMA_EMP','NIP_EMP','GENDER','email', 'password','ID_DEPT','GOLONGAN_EMP','ESELON_EMP','NOTELP_EMP','ALAMAT_EMP','admin',

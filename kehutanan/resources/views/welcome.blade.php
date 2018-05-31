@@ -16,7 +16,7 @@
     <link href="{{ asset('css/welcome.css')}}" rel="stylesheet">
     
 </head>
-    <body style="background: url({{ asset('dashboard/assets/bg_welcome.png')}});">
+    <body style="background: url({{ asset('dashboard/assets/bg_welcome.png')}});background-repeat: no-repeat; background-size: cover;">
     <header class="masthead text-center ">
     
       <div class="masthead-content">
@@ -32,7 +32,7 @@
                     @else
                         <a href="{{ route('login') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Login</a><br>
                         
-                        <a href="{{ route('register') }}" class="text-white">Register</a>
+                        
                     @endauth
                 </div>
             @endif

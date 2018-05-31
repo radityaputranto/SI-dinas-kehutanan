@@ -10,10 +10,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Tambah Pegawai</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Edit Data Pegawai</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan tunjangan </a></li>
-                            <li class="breadcrumb-item active">Tambah Pegawai</li>
+                            <li class="breadcrumb-item active">Edit Data Pegawai</li>
                         </ol>
                     </div>
                     
@@ -74,7 +74,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-account-card-details"></i></div>
-                                                <input type="number" class="form-control" id="nip_peg" placeholder="NIP" name="NIP_EMP" value="{{$emp->NIP_EMP}}">
+                                                <input type="text" class="form-control" id="nip_peg" placeholder="NIP" name="NIP_EMP" value="{{$emp->NIP_EMP}}">
                                             </div>
                                             @if ($errors->has('NIP_EMP'))
                                                 <span class="alert alert-danger">NIP Pegawai telah digunakan / tidak boleh kosong</span>

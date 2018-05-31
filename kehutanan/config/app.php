@@ -181,6 +181,9 @@ return [
         //new
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
+        //excel
+         Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*
@@ -232,6 +235,8 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         /*'Alert' => UxWeb\SweetAlert\SweetAlert::class,*/
 
+        //excel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

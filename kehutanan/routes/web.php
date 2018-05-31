@@ -25,7 +25,8 @@ Route::get('/home',function(){
 	else{
 		//admin
 		$users['users'] = \App\User::with('dept')->get();
-		/*return $users;*/
+		
+		//return $users;
 		return view('admin/home',$users);
 	}
 });

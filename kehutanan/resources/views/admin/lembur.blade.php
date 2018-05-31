@@ -57,6 +57,7 @@
                                             <div class="mr-auto">
                                                 <div class="form-group">
                                                      <h4 class="card-title">Daftar Biaya Lembur</h4>
+                                                     <h6 class="text-muted">Biaya dikalikan per jam</h6>
                                                 </div>
                                             </div>
                                             <div class="ml-auto">
