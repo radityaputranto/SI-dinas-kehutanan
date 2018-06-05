@@ -46,6 +46,11 @@ Route::get('profil','user\ProfilController@index');
 Route::resource('emp', 'Admin\AdminEmpController');
 Route::get('add_emp','Admin\AdminEmpController@create');
 
+/*export excel admin*/
+Route::get('export_pegawai','Admin\AdminEmpController@export_excel');
+Route::get('export_potongan','Admin\PotonganController@export_excel');
+Route::get('export_lembur','Admin\LemburController@export_excel');
+
 Route::resource('tunjangan', 'Admin\TunjanganController');
 Route::get('add_tunjangan','Admin\TunjanganController@create');
 Route::get('list_tunjangan','Admin\TunjanganController@index');

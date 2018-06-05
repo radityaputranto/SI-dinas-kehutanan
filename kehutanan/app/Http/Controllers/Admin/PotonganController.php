@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Excel;  
 use App\Potongan;
 
 class PotonganController extends Controller
@@ -163,5 +163,14 @@ class PotonganController extends Controller
     {
 
         
+    }
+
+    public function export_excel(){
+        $potongan = Potongan::select('eselon','golongan','tidak_masuk_tk','tidak_masuk_dk','telat_psw_1','telat_psw_2','telat_psw_3','telat_psw_4','tdk_absen','telat_senam','tdk_senam')->get();
+        return Excel::create('Data Potongan Absensi', function($excel) use ($potongan){
+            $excel->sheet('mysheet', function($sheet) use ($potongan){
+                $sheet->fromArray($potongan);
+            });
+        })-> download('xls');
     }
 }

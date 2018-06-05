@@ -236,7 +236,7 @@ return [
         /*'Alert' => UxWeb\SweetAlert\SweetAlert::class,*/
 
         //excel
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Excel' => Maatwebpsite\Excel\Facades\Excel::class,
     ],
 
 ];

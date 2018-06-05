@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Excel;
 use App\lembur;
 
 class lemburController extends Controller
@@ -128,8 +128,17 @@ class lemburController extends Controller
     public function destroy($id_lembur)
     {
 
-        Pegawai::find($id_lembur)->delete();
+        /*Pegawai::find($id_lembur)->delete();*/
         /*$emp;*/
         return redirect('admin.lembur')->with('success','Product has been  deleted');
+    }
+
+    public function export_excel(){
+        $lembur = Lembur::select('eselon','golongan','nominal')->get();
+        return Excel::create('Data Biaya Lembur', function($excel) use ($lembur){
+            $excel->sheet('mysheet', function($sheet) use ($lembur){
+                $sheet->fromArray($lembur);
+            });
+        })-> download('xls');
     }
 }

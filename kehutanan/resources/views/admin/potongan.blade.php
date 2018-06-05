@@ -19,6 +19,8 @@
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan Tunjangan </a></li>
                             <li class="breadcrumb-item active">Daftar Potongan Absen</li>
                         </ol>
+
+
                     </div>
                     
                 </div>
@@ -71,6 +73,7 @@
                                                 <div class="form-group">
                                                     <!-- <a type="button" class="btn btn-info waves-effect waves-light" href="{{url('add_datajangan')}}">add</a> -->
                                                     <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -251,12 +254,18 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+
+
                                 </div>
                                     </div>
                                 </div>
+
+
+
                             </div>
+
                         </div>
-    
+                        <a href="{{ url('export_potongan')}}"><button class="btn btn-rounded btn-default btn-excel" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button"><i class="mdi mdi-file-excel"></i> Export Excel</button></a>
                     </div>
                 </div>
 

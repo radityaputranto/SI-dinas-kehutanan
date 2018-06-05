@@ -95,6 +95,7 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+                                    <a href="{{ url('export_lembur')}}"><button class="btn btn-rounded btn-default btn-excel" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button"><i class="mdi mdi-file-excel"></i> Export Excel</button></a>
                                 </div>
                             </div>
                         </div>

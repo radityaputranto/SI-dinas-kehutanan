@@ -34,14 +34,19 @@
                             <div class="card-block">
                                 <h4 class="card-title">Input Absnesi</h4>
                                 
-                                <form class="form-horizontal p-t-20">
+                                <form class="form-horizontal p-t-20" method="post" enctype="multipart/form-data" action="">
+
+                                {{csrf_field()}}
 
                                     
 
                                     <div class="form-group row m-b-0">
                                         <div class=" col-sm-9">
-                                            <button type="submit" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i> Input Absensi</button>
+                                            <input type="file" name="file" id="file">
                                         </div>
+                                        <!-- <div class=" col-sm-9">
+                                            <button type="submit" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i> Input Absensi</button>
+                                        </div> -->
                                     </div>
                                     
                                 </form>

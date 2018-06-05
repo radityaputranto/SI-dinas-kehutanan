@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Alert;
+use Excel;
 
 use App\Pegawai;
 use Illuminate\Http\Request;
@@ -159,5 +160,15 @@ class AdminEmpController extends Controller
         Pegawai::find($NIP_EMP)->delete();
         /*$emp;*/
         return redirect('home')->with('success','Product has been  deleted');
+    }
+
+
+    public function export_excel(){
+        $pegawai = Pegawai::select('NIP_EMP','NAMA_EMP','GENDER','email','ID_DEPT','GOLONGAN_EMP','ESELON_EMP','NOTELP_EMP','ALAMAT_EMP')->get();
+        return Excel::create('data_pegawai', function($excel) use ($pegawai){
+            $excel->sheet('mysheet', function($sheet) use ($pegawai){
+                $sheet->fromArray($pegawai);
+            });
+        })-> download('xls');
     }
 }
