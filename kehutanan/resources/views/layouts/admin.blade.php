@@ -20,6 +20,8 @@
     <link href="{{ asset('dashboard/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="{{ asset('dashboard/css/colors/green-dark.css')}}" id="theme" rel="stylesheet">
+    <!-- drop upload -->
+    <link rel="stylesheet" href="{{ asset('dashboard/plugins/dropify/dist/css/dropify.min.css')}}">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,7 +99,7 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="{{ asset('dashboard/assets/profil.jpg')}}" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Raditya Putranto</h4>
+                                                <h4> {{Session::get('NAMA_EMP')}} </h4>
                                                 <p>ADMIN</p>
                                                 </div>
                                         </div>
@@ -178,6 +180,10 @@
                             </ul>
                         </li>
 
+                        <li>
+                            <a href="{{url('list_surat')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">list Surat Izin</span></a>
+                        </li>
+
                         
                         <li>
                             <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan Pegawai</span></a>
@@ -191,9 +197,10 @@
                         </li>                        
                         <li>
                             <a href="{{url('list_uang_mkn')}}" aria-expanded="false"><i class="mdi mdi-food"></i><span class="hide-menu">List Uang Makan</span></a>
-                        </li><li>
-                            <a href="{{url('add_event')}}" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">Tambah Event</span></a>
                         </li>
+                        <!-- <li>
+                            <a href="{{url('add_event')}}" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">Tambah Event</span></a>
+                        </li> -->
 
                         </li><li>
                             <a href="{{url('data_lembur')}}" aria-expanded="false"><i class="mdi mdi-alarm-plus"></i><span class="hide-menu">Lembur</span></a>
@@ -278,6 +285,50 @@
     <script src="{{ asset('dashboard/js/footable-init.js')}}"></script>
     <script src="{{ asset('js/sweetalert.min.js')}}"></script>
 
+    <!-- drop table -->
+    <script src="{{ asset('dashboard/plugins/dropify/dist/js/dropify.min.js')}}"></script>
+    <script>
+    $(document).ready(function() {
+        // Basic
+        $('.dropify').dropify();
+
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
+        });
+
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
+
+        drEvent.on('dropify.errors', function(event, element) {
+            console.log('Has Errors');
+        });
+
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e) {
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
+    });
+    </script>
     <!-- Include this after the sweet alert js file -->
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     @include('sweet::alert')

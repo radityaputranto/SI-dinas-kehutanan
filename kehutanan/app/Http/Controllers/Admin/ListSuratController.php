@@ -1,14 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use Alert;
-
-use App\Pegawai;
-
-class ProfilController extends Controller
+use App\Surat;
+class ListSuratController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +13,10 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        return view('user.profil');
+        $mails = Surat::all()->toArray();
+        $mails['mails'] = \App\Surat::with('emp')->get();
+        
+         return view('admin.list_surat',compact('mails'));
     }
 
     /**
@@ -47,9 +46,11 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_surat)
     {
-        //
+        $mail = Surat::findOrFail($id_surat);
+        return view('admin.detail_emp',compact('mail','id_surat'));
+    
     }
 
     /**
@@ -58,9 +59,9 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $NIP_EMP)
+    public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -70,29 +71,9 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $NIP_EMP)
+    public function update(Request $request, $id)
     {
-        alert()->error('Pastikan input terisi dan unique','Gagal Menyimpan Data');
-        $emp = Pegawai::find($NIP_EMP);
-        $this->validate($request, [
-            'NAMA_EMP' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'NOTELP_EMP' => 'required',
-            'ALAMAT_EMP' => 'required',
-            
-        ]);
-        
-        
-          $emp->NAMA_EMP = $request->get('NAMA_EMP');
-          $emp->email = $request->get('email');
-          $emp->password = bcrypt($request->get('password'));
-          $emp->NOTELP_EMP = $request->get('NOTELP_EMP');
-          $emp->ALAMAT_EMP = $request->get('ALAMAT_EMP');
-
-        $emp->save();
-        alert()->success( 'Data pegawai baru telah tersimapan di database','Update Berhasil');
-        return redirect('home');
+        //
     }
 
     /**
@@ -105,4 +86,5 @@ class ProfilController extends Controller
     {
         //
     }
+
 }

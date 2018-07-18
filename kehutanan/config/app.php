@@ -184,6 +184,9 @@ return [
         //excel
          Maatwebsite\Excel\ExcelServiceProvider::class,
 
+         //pdf
+         Barryvdh\DomPDF\ServiceProvider::class,
+
     ],
 
     /*
@@ -237,6 +240,9 @@ return [
 
         //excel
         'Excel' => Maatwebpsite\Excel\Facades\Excel::class,
+
+        //pdf
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

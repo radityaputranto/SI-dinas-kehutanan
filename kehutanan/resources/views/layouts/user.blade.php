@@ -135,8 +135,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="{{ asset('dashboard/assets/profil.jpg')}}" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Raditya Putranto</h4>
-                                                <p class="text-muted">radit@tes.com</p><a href="{{url('profil')}}" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <h4> {{auth()->user()->NAMA_EMP}} </h4>
+                                                <p class="text-muted">{{auth()->user()->email}}</p><a href="{{url('profil')}}" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
@@ -185,7 +185,7 @@
                     <!-- User profile image -->
                     <div class="profile-img"> <img src="{{ asset('dashboard/assets/profil.jpg')}}" alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Raditya Putranto <span class="caret"></span></a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{auth()->user()->NAMA_EMP}} <span class="caret"></span></a>
                         <div class="dropdown-menu animated flipInY">
                             <a href="{{url('profil')}}" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             
@@ -227,7 +227,10 @@
                         <li>
                             <a href="{{url('profil')}}" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">Profil</span></a>
                         </li>
-                        
+
+                        <li>
+                            <a href="{{url('surat')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Surat Izin</span></a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -296,6 +299,10 @@
     <script src="{{ asset('dashboard/plugins/moment/moment.js')}}"></script>
     <script src="{{ asset('dashboard/plugins/calendar/dist/fullcalendar.min.js')}}"></script>
     <script src="{{ asset('dashboard/plugins/calendar/dist/cal-init.js')}}"></script>
+
+    <!-- Include this after the sweet alert js file -->
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+    @include('sweet::alert')
 </body>
 
 </html>

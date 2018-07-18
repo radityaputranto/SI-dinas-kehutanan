@@ -29,16 +29,16 @@
                 <!-- baris jumlah tunjangan dan uang makan yang diterima -->
                 <div class="row">
                     <!-- Column -->
-                    <div class="col-md-4 col-lg-4 col-xlg-4">
+                    <!-- <div class="col-md-6 col-lg-6 col-xlg-6">
                         <div class="card card-inverse card-info">
                             <div class="box bg-info text-center">
                                 <h1 class="font-light text-white">Rp. 990.000</h1>
                                 <h6 class="text-white">Uang  Makan</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Column -->
-                    <div class="col-md-4 col-lg-4 col-xlg-4">
+                    <div class="col-md-6 col-lg-6 col-xlg-6">
                         <div class="card card-inverse card-success">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">Rp. 1.250.000</h1>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <!-- Column -->
-                    <div class="col-md-4 col-lg-4 col-xlg-4">
+                    <div class="col-md-6 col-lg-6 col-xlg-6">
                         <div class="card card-inverse card-warning">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">Rp. 1.750.000</h1>

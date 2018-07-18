@@ -43,17 +43,14 @@
                                                 <br/> Jawa Timur - 61253</p>
                                         </address>
                                         <br><br><br>
-                                        <h4>Golongan : IV / B</h4>
-                                        <h4>Eselon   : III A</h4>
+                                        <h4>Golongan : {{auth()->user()->GOLONGAN_EMP}}</h4>
+                                        <h4>Eselon   : {{auth()->user()->ESELON_EMP}}</h4>
                                     </div>
                                     <div class="pull-right text-right">
                                         <address>
                                             <h3>To,</h3>
-                                            <h4 class="font-bold">Raditya Putranto,</h4>
-                                            <p class="text-muted m-l-30">GMS EA V / no 28,
-                                                <br/> Waru,
-                                                <br/> Kabupaten Sidoarjo,
-                                                <br/> Jawa Timur - 61256</p>
+                                            <h4 class="font-bold">{{auth()->user()->NAMA_EMP}},</h4>
+                                            <p class="text-muted m-l-30">{{auth()->user()->ALAMAT_EMP}}</p>
                                             <p class="m-t-30"><b>Invoice Date :</b> <i class="fa fa-calendar"></i> 23rd Jan 2018</p>
                                             <p><b>Due Date :</b> <i class="fa fa-calendar"></i> 25th Jan 2018</p>
                                         </address>

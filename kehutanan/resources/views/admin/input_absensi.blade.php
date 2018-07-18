@@ -33,28 +33,32 @@
                         <div class="card">
                             <div class="card-block">
                                 <h4 class="card-title">Input Absnesi</h4>
-                                
-                                <form class="form-horizontal p-t-20" method="post" enctype="multipart/form-data" action="">
+                                <label class="text-muted">Upload file excel Export mesin absensi</label>
+                                <form class="form-horizontal p-t-20" method="post" enctype="multipart/form-data" action="{{ url('import_absen')}}">
 
                                 {{csrf_field()}}
 
                                     
 
                                     <div class="form-group row m-b-0">
-                                        <div class=" col-sm-9">
+                                        <!-- <div class=" col-sm-12">
                                             <input type="file" name="file" id="file">
-                                        </div>
-                                        <!-- <div class=" col-sm-9">
-                                            <button type="submit" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i> Input Absensi</button>
                                         </div> -->
+                                        
+                                        <div class="card-block" style="margin-top: -20px;">
+                                            <input type="file" name="file" id="input-file-now file" class="dropify" />
+                                        </div>
+                                                                                    
+                                        <div class=" col-sm-12" style="margin-top: 7px;">
+                                            <button type="submit" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i> Submit Data</button>
+                                        </div>
                                     </div>
                                     
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <!-- ribbon lembur-->
+                    <!-- <div class="col-md-3">
                         <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-primary">Acara</div>
                             <p class="ribbon-content">
@@ -65,7 +69,7 @@
                                 </ul>
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 
@@ -88,4 +92,6 @@
             <!-- End footer -->
             <!-- ============================================================== -->
         </div>
+
+    
 @endsection

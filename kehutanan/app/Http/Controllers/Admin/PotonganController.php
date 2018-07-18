@@ -162,7 +162,7 @@ class PotonganController extends Controller
     public function destroy($id_potongan)
     {
 
-        
+    
     }
 
     public function export_excel(){

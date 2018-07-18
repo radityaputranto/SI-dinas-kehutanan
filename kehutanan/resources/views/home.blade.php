@@ -27,7 +27,7 @@
 <![endif]-->
 </head>
 
-<body class="fix-header card-no-border">
+<body class="fix-header card-no-border" style="text-align: center;">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
