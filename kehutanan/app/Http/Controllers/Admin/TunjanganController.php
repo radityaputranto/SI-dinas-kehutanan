@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Tunjangan;
-
+use Excel;
 class TunjanganController extends Controller
 {
      /**
@@ -132,5 +132,13 @@ class TunjanganController extends Controller
         Pegawai::find($id_tunjangan)->delete();
         /*$emp;*/
         return redirect('admin.list_tunjangan')->with('success','Product has been  deleted');
+    }
+    public function export_excel(){
+        $tunjagan = Tunjangan::select('eselon','golongan','TUN_DAERAH','TUN_PRESTASI')->get();
+        return Excel::create('Data Nominal Tunjagan', function($excel) use ($tunjagan){
+            $excel->sheet('mysheet', function($sheet) use ($tunjagan){
+                $sheet->fromArray($tunjagan);
+            });
+        })-> download('xls');
     }
 }

@@ -30,7 +30,7 @@
                    <div class="col-lg-6">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Form Input Lembur</h4>
+                                <h4 class="card-title">Form Edit Lembur</h4>
                                 <h6 class="card-subtitle">Pastikan menginput data dengan sesuai</h6>
                                 <form class="form-horizontal p-t-20" action="{{ route('lembur.update',$id_lembur) }}"  method="post">
                                     {{csrf_field()}}

@@ -99,8 +99,10 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="{{ asset('dashboard/assets/profil.jpg')}}" alt="user"></div>
                                             <div class="u-text">
-                                                <h4> {{Session::get('NAMA_EMP')}} </h4>
+                                                <h4> {{auth()->user()->NAMA_EMP}} </h4>
+                                                <h5>{{auth()->user()->email}}</h5>
                                                 <p>ADMIN</p>
+                                                <a href="{{url('admin_profil')}}" class="btn btn-rounded btn-success btn-sm">View Profile</a>
                                                 </div>
                                         </div>
                                     </li>
@@ -138,7 +140,7 @@
                     <!-- User profile image -->
                     <div class="profile-img"> <img src="{{ asset('dashboard/assets/profil.jpg')}}" alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Raditya Putranto <span class="caret"></span></a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{auth()->user()->NAMA_EMP}} <span class="caret"></span></a>
                         <p>Admin</p>
                         <div class="dropdown-menu animated flipInY">
                            
@@ -202,15 +204,20 @@
                             <a href="{{url('add_event')}}" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">Tambah Event</span></a>
                         </li> -->
 
-                        </li><li>
+                        
+
+                        <li>
                             <a href="{{url('data_lembur')}}" aria-expanded="false"><i class="mdi mdi-alarm-plus"></i><span class="hide-menu">Lembur</span></a>
                         </li>
 
 
-                        </li><li>
+                        </li>
+                        <li>
                             <a href="{{url('data_potongan')}}" aria-expanded="false"><i class="mdi mdi-cash-usd"></i><span class="hide-menu">Potongan</span></a>
                         </li>
-                        
+                        <li>
+                            <a href="{{url('admin_profil')}}" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">Admin Profil</span></a>
+                        </li>
                         
                         
                     </ul>

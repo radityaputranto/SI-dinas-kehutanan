@@ -10,10 +10,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Edit Lembur</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Edit Tunjangan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan tunjangan </a></li>
-                            <li class="breadcrumb-item active">Edit lembur</li>
+                            <li class="breadcrumb-item active">Edit Tunjangan</li>
                         </ol>
                     </div>
                     
@@ -30,7 +30,7 @@
                    <div class="col-lg-6">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Form Input Pegawai</h4>
+                                <h4 class="card-title">Form Edit Tunjangan</h4>
                                 <h6 class="card-subtitle">Pastikan menginput data dengan sesuai</h6>
                                 <form class="form-horizontal p-t-20" action="{{ route('tunjangan.update',$id_tunjangan) }}"  method="post">
                                     {{csrf_field()}}

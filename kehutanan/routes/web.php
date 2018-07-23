@@ -43,8 +43,9 @@ Route::get('tun_daerah','user\TunDaerahController@index');
 Route::get('tun_pres','user\TunPrestasiController@index');
 Route::get('uang_mkn','user\UangMknController@index');
 Route::get('profil','user\ProfilController@index');
-Route::get('surat','user\SuratController@index');
+Route::get('surat_ijin','user\SuratController@index');
 Route::post('import_surat','user\SuratController@store');
+
 //Route::post('edit_profil','user\ProfilController@edit');
 
 /*admin route*/
@@ -55,11 +56,14 @@ Route::get('add_emp','Admin\AdminEmpController@create');
 Route::get('export_pegawai','Admin\AdminEmpController@export_excel');
 Route::get('export_potongan','Admin\PotonganController@export_excel');
 Route::get('export_lembur','Admin\LemburController@export_excel');
+Route::get('export_tunjangan','Admin\TunjanganController@export_excel');
 
 /*import excel*/
 Route::post('import_absen','Admin\AdminAbsensiController@import_excel');
-Route::get('list_surat','Admin\ListSuratController@index');
 
+Route::resource('surat', 'Admin\ListSuratController');
+Route::get('list_surat','Admin\ListSuratController@index');
+Route::get('tes_pdf','Admin\ListSuratController@generatePDF');
 
 Route::resource('tunjangan', 'Admin\TunjanganController');
 Route::get('add_tunjangan','Admin\TunjanganController@create');
@@ -72,6 +76,8 @@ Route::get('data_lembur','Admin\LemburController@index');
 Route::resource('potongan', 'Admin\PotonganController');
 Route::get('add_potongan','Admin\PotonganController@create');
 Route::get('data_potongan','Admin\PotonganController@index');
+
+Route::get('admin_profil','Admin\AdminProfilController@index');
 
 
 /*Route::post('add_emp','AdminEmpController@store');*/

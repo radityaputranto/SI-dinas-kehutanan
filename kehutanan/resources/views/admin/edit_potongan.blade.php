@@ -10,10 +10,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Tambah Pegawai</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Form Edit Potongan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan lembur </a></li>
-                            <li class="breadcrumb-item active">Tambah Pegawai</li>
+                            <li class="breadcrumb-item active">Form Edit Potongan</li>
                         </ol>
                     </div>
                     
@@ -68,7 +68,7 @@
                                     </div>
                                     
                                     <div class="form-group row form-group row {{ $errors->has('Tdk_masuk_tk') ? 'has-error' : 'Tdk_masuk_tk' }}">
-                                        <label for="Tdk_masuk_tk" class="col-sm-3 control-label"></label>
+                                        <label for="Tdk_masuk_tk" class="col-sm-3 control-label">Tdk_masuk_tk</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -81,7 +81,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Tdk_masuk_dk') ? 'has-error' : 'Tdk_masuk_dk' }}">
-                                        <label for="Tdk_masuk_dk" class="col-sm-3 control-label"></label>
+                                        <label for="Tdk_masuk_dk" class="col-sm-3 control-label">Tdk_masuk_dk</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>

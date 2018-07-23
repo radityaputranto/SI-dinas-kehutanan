@@ -11,11 +11,11 @@ class Surat extends Model
    /* use SoftDeletes;*/
    
  	protected $table = 'surat';
- 	protected $primaryKey = 'ID_Surat';
+ 	protected $primaryKey = 'id_surat';
     protected $fillable = [
     	'jenis' => 'required',
             
-        'NIP_EMP','jenis','tgl_ijin','file_surat','keterangan',
+        'NIP','jenis','tgl_ijin','file_surat','keterangan',
         
 
     ];

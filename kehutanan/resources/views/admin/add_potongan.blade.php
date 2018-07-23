@@ -10,10 +10,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Tambah Pegawai</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Tambah Potongan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Sistem Absensi dan lembur </a></li>
-                            <li class="breadcrumb-item active">Tambah Pegawai</li>
+                            <li class="breadcrumb-item active">Tambah Potongan</li>
                         </ol>
                     </div>
                     
@@ -30,7 +30,7 @@
                    <div class="col-lg-6">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Form Input Pegawai</h4>
+                                <h4 class="card-title">Form Input Potongan</h4>
                                 <h6 class="card-subtitle">Pastikan menginput data dengan sesuai</h6>
                                 <form class="form-horizontal p-t-20" action="{{ route('potongan.store') }}"  method="post">
                                     {{csrf_field()}}
@@ -80,7 +80,7 @@
                                     </div>
                                     
                                     <div class="form-group row form-group row {{ $errors->has('Tdk_masuk_tk') ? 'has-error' : 'Tdk_masuk_tk' }}">
-                                        <label for="Tdk_masuk_tk" class="col-sm-3 control-label"></label>
+                                        <label for="Tdk_masuk_tk" class="col-sm-3 control-label">Tdk_masuk_tk</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -93,7 +93,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Tdk_masuk_dk') ? 'has-error' : 'Tdk_masuk_dk' }}">
-                                        <label for="Tdk_masuk_dk" class="col-sm-3 control-label"></label>
+                                        <label for="Tdk_masuk_dk" class="col-sm-3 control-label">Tdk_masuk_dk</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -106,7 +106,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Telat_psw_1') ? 'has-error' : 'Telat_psw_1' }}">
-                                        <label for="" class="col-sm-3 control-label"></label>
+                                        <label for="" class="col-sm-3 control-label">Telat_psw_1</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -119,7 +119,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Telat_psw_2') ? 'has-error' : 'Telat_psw_2' }}">
-                                        <label for="Telat_psw_2" class="col-sm-3 control-label"></label>
+                                        <label for="Telat_psw_2" class="col-sm-3 control-label">Telat_psw_2</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -132,7 +132,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Telat_psw_3') ? 'has-error' : 'Telat_psw_3' }}">
-                                        <label for="Telat_psw_3" class="col-sm-3 control-label"></label>
+                                        <label for="Telat_psw_3" class="col-sm-3 control-label">Telat_psw_3</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -145,7 +145,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Telat_psw_4') ? 'has-error' : 'Telat_psw_4' }}">
-                                        <label for="Telat_psw_4" class="col-sm-3 control-label"></label>
+                                        <label for="Telat_psw_4" class="col-sm-3 control-label">Telat_psw_4</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -158,7 +158,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Tdk_absen') ? 'has-error' : 'Tdk_absen' }}">
-                                        <label for="" class="col-sm-3 control-label"></label>
+                                        <label for="" class="col-sm-3 control-label">Tdk_absen</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -171,7 +171,7 @@
                                     </div>
 
                                     <div class="form-group row form-group row {{ $errors->has('Telat_senam') ? 'has-error' : 'Telat_senam' }}">
-                                        <label for="Telat_senam" class="col-sm-3 control-label"></label>
+                                        <label for="Telat_senam" class="col-sm-3 control-label">Telat_senam</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>
@@ -184,7 +184,7 @@
                                     </div>
 
                                      <div class="form-group row form-group row {{ $errors->has('Tdk_senam') ? 'has-error' : 'Tdk_senam' }}">
-                                        <label for="" class="col-sm-3 control-label"></label>
+                                        <label for="" class="col-sm-3 control-label">Tdk_senam</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="mdi mdi-cash"></i></div>

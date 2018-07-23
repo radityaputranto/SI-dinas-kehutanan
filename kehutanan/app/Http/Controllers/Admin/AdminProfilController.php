@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Surat;
-use PDF;
 
-class ListSuratController extends Controller
+class AdminProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class ListSuratController extends Controller
      */
     public function index()
     {
-        $mails = Surat::all()->toArray();
-        /*$mails['mails'] = \App\Surat::with('emp')->get();*/
-        
-         return view('admin.list_surat',compact('mails'));
+        return view('admin.admin_profil');
     }
 
     /**
@@ -48,11 +43,9 @@ class ListSuratController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_surat)
+    public function show($id)
     {
-        $mail = Surat::findOrFail($id_surat);
-        return view('admin.detail_surat',compact('mail','id_surat'));
-    
+        //
     }
 
     /**
@@ -88,20 +81,4 @@ class ListSuratController extends Controller
     {
         //
     }
-
-    public function generatePDF()
-
-    {
-
-       /* $data = ['title' => 'Welcome to HDTuto.com'];
-
-        $pdf = PDF::loadView('admin.tes', $data);*/
-        $pdf = PDF::loadView('admin.tes');
-
-
-
-        return $pdf->download('hdtuto.pdf');
-
-    }
-
 }

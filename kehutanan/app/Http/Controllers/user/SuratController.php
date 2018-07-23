@@ -58,7 +58,7 @@ class SuratController extends Controller
         $surat = new Surat([
             
             //'NAMA_EMP' => $request->get(''),
-            'NIP_EMP'=> auth()->user()->NIP_EMP,
+            'NIP'=> auth()->user()->NIP_EMP,
             'jenis' => $request->get('jenis'),
             'tgl_ijin' => $request->get('tgl_ijin'),
             'file_surat' => $path,

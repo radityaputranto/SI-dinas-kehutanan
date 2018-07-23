@@ -229,7 +229,7 @@
                         </li>
 
                         <li>
-                            <a href="{{url('surat')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Surat Izin</span></a>
+                            <a href="{{url('surat_ijin')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Surat Izin</span></a>
                         </li>
                     </ul>
                 </nav>

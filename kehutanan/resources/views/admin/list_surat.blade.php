@@ -46,11 +46,11 @@
                                             <tr>
                                                 
                                                 <th>NIP</th>
-                                                <th>Nama</th>
+                                                <!-- <th>Nama</th> -->
                                                 <th>Jenis Ijin</th>
                                                 <th>Tgl ijin</th>
                                                 <th>Tgl Submit</th>
-                                            <th></th>
+                                                <th>Detail</th>
                                             </tr>
                                         </thead>
                                     <div class="m-t-40">
@@ -72,13 +72,14 @@
                                              @foreach($mails as $mail)
                                             <tr>
                                                
-                                                <td>{{$mail['NIP_EMP']}}</td>
-                                                <td>{{$mail['emp']['NAMA_EMP']}}</td>
+                                                <!--  -->
+                                                <td>{{$mail['nip']}}</td>
                                                 <td>{{$mail['jenis']}}</td>
                                                 <td>{{$mail['tgl_ijin']}}</td>
                                                 <td>{{$mail['created_at']}}</td>
                                                 <td>
-                                                    <a href="{{action('Admin\ListSuratController@detail', $mail['id_surat'])}}"><button class="btn btn-rounded btn-success">Detail</button></a>
+                                                    
+                                                    <a href="{{action('Admin\ListSuratController@show', $mail['id_surat'])}}"><button class="btn btn-rounded btn-success">Detail</button></a>
                                                 
                                             </tr>
                                             @endforeach 
