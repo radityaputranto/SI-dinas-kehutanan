@@ -3,7 +3,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use PDF;
 class TunDaerahController extends Controller
 {
     /**
@@ -80,5 +80,16 @@ class TunDaerahController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function generatePDF()
+
+    {
+
+       /* $data = ['title' => 'Welcome to HDTuto.com'];
+
+        $pdf = PDF::loadView('admin.tes', $data);*/
+        $pdf = PDF::loadView('pdf_view/pdf_daerah');
+        return $pdf->download('Tunjagan Daerah.pdf');
+
     }
 }

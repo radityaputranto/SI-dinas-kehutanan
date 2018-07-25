@@ -44,22 +44,48 @@
                                                 <th>Golongan</th>
                                                 <th>Eselon</th>
                                                 <th>Departemen</th>
-                                                <th>Tunjangan</th>
+                                                <th>Uang Makan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>21031510353</td>
+                                                <td>196005271986032009</td>
                                                 <td>
-                                                    <a href="javascript:void(0)">Genelia Deshmukh</a>
+                                                    <a href="javascript:void(0)">Dra. IRNA ROCHJATI, MM</a>
                                                 </td>
-                                                <td>Pria</td>
-                                                <td>II</td>
-                                                <td>II B</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>Rp. 1,725,250</td>
+                                              
+                                                <td>IV/dA</td>
+                                                <td>IIa</td>
+                                                <td><span class="label label-danger">SKR</span> </td>
+                                                <td>Rp. 225,250</td>
+                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>19601216 198903 1 005</td>
+                                                <td>
+                                                    <a href="javascript:void(0)">Ir. PUTUT ADJI SURJANTO, MM</a>
+                                                </td>
+                                              
+                                                <td>IV/dA</td>
+                                                <td>IIa</td>
+                                                <td><span class="label label-danger">SKR</span> </td>
+                                                <td>Rp. 300,500</td>
+                                                <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>19630625 198603 2 005</td>
+                                                <td>
+                                                    <a href="javascript:void(0)">WIWIK NURHAYATI, SH, MM</a>
+                                                </td>
+                                              
+                                                <td>IV/dA</td>
+                                                <td>IIa</td>
+                                                <td><span class="label label-danger">SKR</span> </td>
+                                                <td>Rp. 100,250</td>
                                                 <td><button class="btn btn-outline-info waves-effect waves-light" type="button">Detail</button></td>
                                             </tr>
                                         

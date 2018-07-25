@@ -96,16 +96,16 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="pull-right m-t-30 text-right">
-                                        <p>Sub Total Tunjangan Prestasi : Rp. 1,696,000</p>
-                                        <p>PPH (5%) : Rp. 84,800 </p>
+                                        <p>Sub Total Tunjangan Prestasi : Rp. 1.696.000</p>
+                                        <p>PPH (5%) : Rp. 84.800 </p>
                                         <hr>
-                                        <h3><b>Total :</b> Rp. 1,161,200</h3>
+                                        <h3><b>Total :</b> Rp. 1.265.000</h3>
                                     </div>
                                     <div class="clearfix"></div>
                                     <hr>
                                     <div class="text-right">
                                         
-                                        <button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button>
+                                        <a href="{{url('pdf_prestasi')}}"><button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button></a>
                                     </div>
                                 </div>
                             </div>

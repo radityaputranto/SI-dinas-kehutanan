@@ -45,6 +45,8 @@ Route::get('uang_mkn','user\UangMknController@index');
 Route::get('profil','user\ProfilController@index');
 Route::get('surat_ijin','user\SuratController@index');
 Route::post('import_surat','user\SuratController@store');
+Route::get('pdf_daerah','user\TunDaerahController@generatePDF');
+Route::get('pdf_prestasi','user\TunPrestasiController@generatePDF');
 
 //Route::post('edit_profil','user\ProfilController@edit');
 
@@ -58,9 +60,12 @@ Route::get('export_potongan','Admin\PotonganController@export_excel');
 Route::get('export_lembur','Admin\LemburController@export_excel');
 Route::get('export_tunjangan','Admin\TunjanganController@export_excel');
 
+Route::resource('absen', 'Admin\AdminAbsensiController');
+Route::get('list_absen','Admin\AdminAbsensiController@index');
 /*import excel*/
 Route::post('import_absen','Admin\AdminAbsensiController@import_excel');
 
+Route::get('export_tunjangan','Admin\TunjanganController@export_excel');
 Route::resource('surat', 'Admin\ListSuratController');
 Route::get('list_surat','Admin\ListSuratController@index');
 Route::get('tes_pdf','Admin\ListSuratController@generatePDF');

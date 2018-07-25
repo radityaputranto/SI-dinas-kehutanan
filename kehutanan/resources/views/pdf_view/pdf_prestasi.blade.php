@@ -62,7 +62,7 @@ th {
       </div>
 
       <div class="col-7" style="">
-        <h1 class="document-type display-4">Tunjagan Daerah</h1>
+        <h1 class="document-type display-4">Tunjagan Prestasi</h1>
         
       </div>
     </div>

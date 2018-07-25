@@ -17,7 +17,9 @@ class AdminAbsensiController extends Controller
      */
     public function index()
     {
+        $absensi = Absensi::all()->toArray();
         
+         return view('admin.list_absen',compact('absensi'));
     }
 
     /**
@@ -58,9 +60,10 @@ class AdminAbsensiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_absen)
     {
-        //
+        $absensi = Absensi::findOrFail($id_absen);
+        return view('admin.edit_absensi',compact('absensi','id_absen'));
     }
 
     /**
@@ -70,9 +73,28 @@ class AdminAbsensiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_absen)
     {
-        //
+        alert()->error('Pastikan input terisi ','Gagal Menyimpan Data');
+        $absen = Absensi::find($id_absen);
+        $this->validate($request, [
+            'NIP_EMP' => 'required',
+            'TGL_ABSEN' => 'required',
+            'SCAN_MASUK' => 'required',
+            'SCAN_KELUAR' => 'required',
+        ]);
+        
+          $absen->NIP_EMP = $request->get('NIP_EMP');
+          $absen->TGL_ABSEN = $request->get('TGL_ABSEN');
+          $absen->SCAN_MASUK = $request->get('SCAN_MASUK');
+          $absen->SCAN_KELUAR = $request->get('SCAN_KELUAR');
+          $absen->SCAN_TELAT = $request->get('SCAN_TELAT');
+          $absen->SCAN_PUL_CPT = $request->get('SCAN_PUL_CPT');
+          $absen->SCAN_LEMBUR = $request->get('SCAN_LEMBUR');
+
+        $absen->save();
+        alert()->success( 'Data Absensi Berhasil di Update','Absensi telah Terupdate');
+        return redirect('list_absen');
     }
 
     /**
@@ -106,11 +128,12 @@ class AdminAbsensiController extends Controller
                     //'NIP_EMP','SCAN_KELUAR','SCAN_LEMBUR','SCAN_PUL_CPT','SCAN_TELAT','SCAN_MASUK','TGL_ABSEN'
                     $absen->save();
                     /*return redirect('home')->with('Berhasil','Data Absensi berhasil di impor');*/
-                    alert()->success( 'Data Absensi baru telah tersimapan di database','Data Tersimpan');
-                    return redirect('home');
                 }
+
             }
         }
+        alert()->success( 'Data Absensi baru telah tersimapan di database','Data Tersimpan');
+                    return redirect('home');
         
 
     }

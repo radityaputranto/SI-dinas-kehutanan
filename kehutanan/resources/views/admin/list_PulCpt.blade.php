@@ -54,7 +54,7 @@
                                                 <td>
                                                     <a href="javascript:void(0)">Genelia Deshmukh</a>
                                                 </td>
-                                                <td><span class="label label-danger">Designer</span> </td>
+                                                <td><span class="label label-danger">SKR</span> </td>
                                                 <td>20/1/2018</td>
                                                 <td>07.00</td>
                                                 <td>- 01.00</td>
@@ -66,7 +66,7 @@
                                         <tfoot>
                                             <tr>
                                                 <td colspan="2">
-                                                    <button class="btn btn-outline-info waves-effect waves-light" type="button"><span class="btn-label"><i class="mdi mdi-file-pdf"></i></span>Pdf</button>
+                                                    
                                                     <button class="btn btn-outline-success waves-effect waves-light" type="button"><span class="btn-label"><i class="mdi mdi-file-excel"></i></span>Excell</button>
                                                 </td>
                                                 <td colspan="7">

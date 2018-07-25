@@ -105,7 +105,7 @@
                                     <hr>
                                     <div class="text-right">
                                         
-                                        <button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button>
+                                        <a href="{{url('pdf_daerah')}}"><button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button></a>
                                     </div>
                                 </div>
                             </div>

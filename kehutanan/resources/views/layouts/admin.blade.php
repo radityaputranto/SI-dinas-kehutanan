@@ -22,6 +22,8 @@
     <link href="{{ asset('dashboard/css/colors/green-dark.css')}}" id="theme" rel="stylesheet">
     <!-- drop upload -->
     <link rel="stylesheet" href="{{ asset('dashboard/plugins/dropify/dist/css/dropify.min.css')}}">
+    <!-- clock [picker] -->
+    <link href="{{ asset('dashboard/plugins/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -172,14 +174,15 @@
                             <a  href="{{url('add_emp')}}" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Tambah Pegawai</span></a>
                         </li>  -->       
                         <li>
-                            <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timetable"></i><span class="hide-menu">Absensi Pegawai</span></a>
+                            <a href="{{url('list_absen')}}" aria-expanded="false"><i class="mdi mdi-timetable"></i><span class="hide-menu">Absensi Pegawai</span></a>
+                            <!-- <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timetable"></i><span class="hide-menu">Absensi Pegawai</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('list_lembur')}}">Lembur</a></li>
                                 <li><a href="{{url('list_telat')}}">Telat</a></li>
                                 <li><a href="{{url('list_pul_cpt')}}">Pulang Cepat</a></li>
                                 <li><a href="{{url('list_tdk_absen')}}">Tidak Absen</a></li>
                                 <li><a href="{{url('list_tdk_senam')}}">Tidak Senam</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
 
                         <li>
@@ -338,6 +341,37 @@
     </script>
     <!-- Include this after the sweet alert js file -->
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
+    <!-- date and time picker -->
+    <!-- Date Picker Plugin JavaScript -->
+    <script src="{{ asset('dashboard/plugins/moment/moment.js')}}"></script>
+    <!-- Clock Plugin JavaScript -->
+    <script src="{{ asset('dashboard/plugins/clockpicker/dist/jquery-clockpicker.min.js')}}"></script>
+    <script src="{{ asset('dashboard/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('dashboard/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{ asset('dashboard/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script>
+        // Clock pickers
+        $('#single-input').clockpicker({
+            placement: 'bottom',
+            align: 'left',
+            autoclose: true,
+            'default': 'now'
+        });
+        $('.clockpicker').clockpicker({
+            donetext: 'Done',
+        }).find('input').change(function() {
+            console.log(this.value);
+        });
+        $('#check-minutes').click(function(e) {
+            // Have to stop propagation here
+            e.stopPropagation();
+            input.clockpicker('show').clockpicker('toggleView', 'minutes');
+        });
+        if (/mobile/i.test(navigator.userAgent)) {
+            $('input').prop('readOnly', true);
+        }
+        </script>
     @include('sweet::alert')
 </body>
 

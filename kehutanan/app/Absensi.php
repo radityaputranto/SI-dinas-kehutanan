@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Pegawai;
 /*use Illuminate\Database\Eloquent\SoftDeletes;*/
 
 class Absensi extends Model
@@ -18,9 +19,9 @@ class Absensi extends Model
     ];
 
 
-/*    public function emp()
+    public function emp()
     {
     	return $this->belongsTo(Pegawai::class);
-    }*/
+    }
 /*    protected $dates = ['deleted_at'];*/
 }
