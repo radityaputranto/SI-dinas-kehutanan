@@ -4,7 +4,8 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\TunjanganEmp;
+use PDF;
 class UangMknController extends Controller
 {
     /**
@@ -81,5 +82,43 @@ class UangMknController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function generatePDF()
+
+    {
+
+       /* $data = ['title' => 'Welcome to HDTuto.com'];
+
+        $pdf = PDF::loadView('admin.tes', $data);*/
+
+        $emp_id =  (auth()->user()->NIP_EMP);
+        $tun_emp = TunjanganEmp::where('NIP_EMP',$emp_id)->get();
+        $golongan= (auth()->user()->GOLONGAN_EMP);
+        $gol =  explode(' ', $golongan) ;
+        $uang_mkn=0;
+        switch ($gol[0]) {
+                case 'I':
+                    $uang_mkn=30000;
+                    break;
+                case 'II':
+                    $uang_mkn=30000;
+                    break;
+                case 'III':
+                    $uang_mkn=35000;
+                    break;
+                case 'IV':
+                    $uang_mkn=41000;
+                    break;    
+            }
+
+       /* $data = ['title' => 'Welcome to HDTuto.com'];
+
+
+        $pdf = PDF::loadView('admin.tes', $data);*/
+
+        $pdf = PDF::loadView('pdf_view/pdf_uang_mkn',compact('tun_emp' ,'uang_mkn'));
+        return $pdf->download('Uang Makan .pdf');
+
     }
 }

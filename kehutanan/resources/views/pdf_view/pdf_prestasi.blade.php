@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style type="text/css">
+  <title></title>
+  <style type="text/css">
 
 
 .container {
@@ -51,10 +51,10 @@ th {
     background-color: #4CAF50;
     color: white;
 }
-	</style>
+  </style>
 </head>
 <body>
-	
+  
   <div class="invoice">
     <div class="row">
       <div class="col-5">
@@ -80,10 +80,11 @@ th {
       <div class="col-5" style="text-align: right;">
         <br><br><br>
         <p>
-          <strong>Nama Pegawai</strong><br>
-          Golongan <em>Eselon</em><br>
-          no telp pegawai <br>
-          Alamat Pegawai<br>
+          <strong>{{auth()->user()->NAMA_EMP}}</strong><br>
+          {{auth()->user()->NIP_EMP}} <br>
+          Golongan : {{auth()->user()->GOLONGAN_EMP}} <em> | Eselon : {{auth()->user()->ESELON_EMP}}</em><br>
+          {{auth()->user()->NOTELP_EMP}}<br>
+          {{auth()->user()->ALAMAT_EMP}}<br>
         </p>
       </div>
     </div>
@@ -91,6 +92,7 @@ th {
     <br>
     <h6>Detail tunjagnan yang di terima </h6>
     <br>
+    @foreach($tun_emp as $data)
     <table class="table table-striped">
       <thead>
         <tr>
@@ -105,16 +107,25 @@ th {
         <tr>
           <td>Tunjagnan Prestasi</td>
           <td>1</td>
-          <td>Rp. 1.350.000</td>
-          <td>Rp. 1.350.000</td>
+          <td>Rp. {{$data['PRESTASI_AWAL']}}</td>
+          <td>Rp. {{$data['PRESTASI_AWAL']}}</td>
         </tr>
 
         <tr>
-        <td>Telat</td>
-        <td>30</td>
-        <td>Rp. 1000</td>
-        <td>Rp. 30000</td>
+        <td>Pulang Cepat</td>
+        <td>{{$countPulang}} Menit</td>
+        <td>Rp. {{$data['denda_pul_cpt']/$countPulang}}</td>
+        <td>Rp. {{$data['denda_pul_cpt']}}</td>
         </tr>
+
+
+        <tr>
+        <td>Telat</td>
+        <td>{{$countTelat}} Menit</td>
+        <td>Rp. {{$data['denda_telat']/$countTelat}}</td>
+        <td>Rp. {{$data['denda_telat']}}</td>
+        </tr>
+
       
     </table>
     <br><br>
@@ -127,24 +138,24 @@ th {
           <tr >
             
             <td>Sub Total</td>
-            <td class="text-right" style="padding-left: 90px">Rp. 1.330.000</td>
+            <td class="text-right" style="padding-left: 90px">Rp. {{$data['PRESTASI_AWAL']-$data['denda_telat']-$data['denda_pul_cpt']}}</td>
           </tr>
 
           <tr style="background-color: #EDDEDE">
             
             <td>PPH 5%</td>
-            <td class="text-right" style="padding-left: 90px;">Rp. 65.000</td>
+            <td class="text-right" style="padding-left: 90px;">Rp. {{($data['PRESTASI_AWAL']-$data['denda_telat']-$data['denda_pul_cpt'])*$data['PPH']}}</td>
           </tr>
 
           <tr style="background-color: #E2EDD7">
             
             <td><strong>Total </strong></td>
-            <td class="text-right" style="padding-left: 90px"><strong>Rp. 1.265.00</strong></td>
+            <td class="text-right" style="padding-left: 90px"><strong>Rp. {{$data['TUNJANGAN_PRESTASI']}}</strong></td>
           </tr>
         </table>
       </div>
     </div>
-    
+    @endforeach 
     <p class="conditions">
       Tunjangan dapat di ambil di bidang Keuangan 
       <br>

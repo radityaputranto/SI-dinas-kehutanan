@@ -12,6 +12,9 @@ class Absensi extends Model
    /* use SoftDeletes;*/
  	protected $table = 'absensi';
  	protected $primaryKey = 'ID_ABSEN';
+ 	protected $cast= [
+ 		'NIP_EMP' => 'string'
+ 	];
     protected $fillable = [
         'NIP_EMP','SCAN_KELUAR','SCAN_LEMBUR','SCAN_PUL_CPT','SCAN_TELAT','SCAN_MASUK','TGL_ABSEN'
         

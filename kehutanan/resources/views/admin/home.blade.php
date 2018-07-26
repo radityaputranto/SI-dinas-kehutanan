@@ -68,11 +68,7 @@
                                                      <h4 class="card-title">Daftar Seluruh Pegawai</h4>
                                                 </div>
                                             </div>
-                                            <div class="ml-auto">
-                                                <div class="form-group">
-                                                    <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                         <tbody>

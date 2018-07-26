@@ -19,6 +19,10 @@
     <link href="{{ asset('dashboard/css/colors/green.css')}}" id="theme" rel="stylesheet">
     <!-- Calendar CSS -->
     <link href="{{ asset('dashboard/plugins/calendar/dist/fullcalendar.css')}}" rel="stylesheet" />
+    <!-- tabel -->
+    <!-- Footable CSS -->
+    <link href="{{ asset('dashboard/plugins/footable/css/footable.core.css')}}" rel="stylesheet">
+    <link href="{{ asset('dashboard/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -302,6 +306,13 @@
 
     <!-- Include this after the sweet alert js file -->
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
+    <!-- tabel -->
+    <script src="{{ asset('dashboard/plugins/footable/js/footable.all.min.js')}}"></script>
+    <script src="{{ asset('dashboard/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript')}}"></script>
+    <script src="{{ asset('dashboard/js/footable-init.js')}}"></script>
+    <script src="{{ asset('js/sweetalert.min.js')}}"></script>
+
     @include('sweet::alert')
 </body>
 

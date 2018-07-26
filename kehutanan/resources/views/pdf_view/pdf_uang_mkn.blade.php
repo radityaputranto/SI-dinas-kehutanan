@@ -90,7 +90,8 @@ th {
     </div>
     <br>
     <br>
-    <h6>Detail tunjagnan yang di terima </h6>
+    <h4>Detail Uang Makan yang di terima </h4>
+    <h6>Uang Makan Maksimal 22 Hari</h6>
     <br>
     @foreach($tun_emp as $data)
     <table class="table table-striped">
@@ -106,26 +107,12 @@ th {
       
         <tr>
           <td>Tunjagnan Daerah</td>
-          <td>1</td>
-          <td>Rp. {{$data['DAERAH_AWAL']}}</td>
-          <td>Rp. {{$data['DAERAH_AWAL']}}</td>
+          <td>{{$data['UANG_MKN']/$uang_mkn}} Hari</td>
+          <td>Rp. {{$uang_mkn}}</td>
+          <td>Rp. {{$data['UANG_MKN']}}</td>
         </tr>
 
-        <tr>
-        <td>Pulang Cepat</td>
-        <td>{{$countPulang}} Menit</td>
-        <td>Rp. {{$data['denda_pul_cpt']/$countPulang}}</td>
-        <td>Rp. {{$data['denda_pul_cpt']}}</td>
-        </tr>
-
-
-        <tr>
-        <td>Telat</td>
-        <td>{{$countTelat}} Menit</td>
-        <td>Rp. {{$data['denda_telat']/$countTelat}}</td>
-        <td>Rp. {{$data['denda_telat']}}</td>
-        </tr>
-
+        
       
     </table>
     <br><br>
@@ -138,19 +125,15 @@ th {
           <tr >
             
             <td>Sub Total</td>
-            <td class="text-right" style="padding-left: 90px">Rp. {{$data['PRESTASI_AWAL']-$data['denda_telat']-$data['denda_pul_cpt']}}</td>
+            <td class="text-right" style="padding-left: 90px">Rp. {{$data['UANG_MKN']}}</td>
           </tr>
 
-          <tr style="background-color: #EDDEDE">
-            
-            <td>PPH 5%</td>
-            <td class="text-right" style="padding-left: 90px;">Rp. {{($data['PRESTASI_AWAL']-$data['denda_telat']-$data['denda_pul_cpt'])*$data['PPH']}}</td>
-          </tr>
+          
 
           <tr style="background-color: #E2EDD7">
             
             <td><strong>Total </strong></td>
-            <td class="text-right" style="padding-left: 90px"><strong>Rp. {{$data['TUNJANGAN_DAERAH']}}</strong></td>
+            <td class="text-right" style="padding-left: 90px"><strong>Rp. {{$data['UANG_MKN']}}</strong></td>
           </tr>
         </table>
       </div>

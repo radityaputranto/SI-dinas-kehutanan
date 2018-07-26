@@ -30,7 +30,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-block printableArea">
-                            <h3><b>Detail Uang Makan</b> <span class="pull-right">id : 5669626</span></h3>
+                            @foreach($tun_emp as $data)
+                            <h3><b>Detail Uang Makan</b> <span class="pull-right">id : {{$data['ID_TUNJANGAN_EMP']}}</span></h3>
                             <hr>
                             <div class="row">
                                 <div class="col-md-12">
@@ -51,8 +52,9 @@
                                             <h3>To,</h3>
                                             <h4 class="font-bold">{{auth()->user()->NAMA_EMP}},</h4>
                                             <p class="text-muted m-l-30">{{auth()->user()->ALAMAT_EMP}}</p>
-                                            <p class="m-t-30"><b>Invoice Date :</b> <i class="fa fa-calendar"></i> 23rd Jan 2018</p>
-                                            <p><b>Due Date :</b> <i class="fa fa-calendar"></i> 25th Jan 2018</p>
+                                            
+                                            <p class="m-t-30"><b>Tanggal Invoice :</b> <i class="fa fa-calendar"></i> {{$data['created_at']}}</p>
+                                            
                                         </address>
                                     </div>
                                 </div>
@@ -69,30 +71,33 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                 
                                                 <tr>
                                                     <td class="text-center">1</td>
                                                     <td>Uang Makan</td>
-                                                    <td class="text-right">12 </td>
-                                                    <td class="text-right"> Rp. 41,000 </td>
-                                                    <td class="text-right"> Rp. 492,000 </td>
+                                                    <td class="text-right">{{$data['UANG_MKN']/$uang_mkn}} Hari</td>
+                                                    <td class="text-right"> Rp. {{$uang_mkn}}</td>
+                                                    <td class="text-right"> Rp. {{$data['UANG_MKN']}} </td>
                                                 </tr>
                                                 
+                                                @endforeach 
+                                            
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="pull-right m-t-30 text-right">
-                                        <p>Sub Total Uang Makan : Rp. 192,000</p>
-                                        <p>PPH (15%) : Rp. 73,800 </p>
+                                        <p>Sub Total Uang Makan : Rp. {{$data['UANG_MKN']}}</p>
+                                        
                                         <hr>
-                                        <h3><b>Total :</b> Rp. 418,200</h3>
+                                        <h3><b>Total :</b> Rp. {{$data['UANG_MKN']}}</h3>
                                     </div>
                                     <div class="clearfix"></div>
                                     <hr>
                                     <div class="text-right">
                                         
-                                        <button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button>
+                                        <a href="{{url('pdf_uang_mkn')}}"><button id="print" class="btn btn-danger" type="button"> <span><i class="fa fa-print"></i>   Print PDF</span> </button></a>
                                     </div>
                                 </div>
                             </div>

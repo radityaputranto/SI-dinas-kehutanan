@@ -117,7 +117,7 @@ class AdminAbsensiController extends Controller
             if (!empty($data) && $data->count()) {
                 foreach ($data as $key => $value) {
                     $absen = new Absensi();
-                    $absen->NIP_EMP = $value->nip;
+                    $absen->NIP_EMP = "{$value->nip}";
                     $absen->SCAN_KELUAR = $value->scan_keluar;
                     $absen->SCAN_LEMBUR = $value->scan_lembur;
                     $absen->SCAN_PUL_CPT = $value->scan_pul_cpt;

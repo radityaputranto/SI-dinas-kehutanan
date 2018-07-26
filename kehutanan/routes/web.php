@@ -18,9 +18,13 @@ Auth::routes();
 Route::group(['middleware' => ['web','auth']],function(){
 		return view('welcome');
 });
+
 Route::get('/home',function(){
 	if (Auth::user()->admin == 0) {
-		return view('user/home');
+		//return view('user/home');
+
+		return redirect('home_user');
+		//Route::get('absensi','user\PegawaiController@index');
 	}
 	else{
 		//admin
@@ -28,25 +32,32 @@ Route::get('/home',function(){
 		
 		//return $users;
 		return view('admin/home',$users);
+		
+
+
 	}
 });
 Route::get('absensi','UserController@index');
+
 /*
 Route::get('','Controller@index');
 */
 /*user route*/
+
+Route::get('home_user','user\PegawaiController@index');
 /*user route*/
 Route::resource('user', 'user\ProfilController');
 
 Route::get('absensi','user\AbsensiController@index');
-Route::get('tun_daerah','user\TunDaerahController@index');
-Route::get('tun_pres','user\TunPrestasiController@index');
-Route::get('uang_mkn','user\UangMknController@index');
+Route::get('tun_daerah','user\PegawaiController@tun_daerah');
+Route::get('tun_pres','user\PegawaiController@tun_prestasi');
+Route::get('uang_mkn','user\PegawaiController@uang_mkn');
 Route::get('profil','user\ProfilController@index');
 Route::get('surat_ijin','user\SuratController@index');
 Route::post('import_surat','user\SuratController@store');
 Route::get('pdf_daerah','user\TunDaerahController@generatePDF');
 Route::get('pdf_prestasi','user\TunPrestasiController@generatePDF');
+Route::get('pdf_uang_mkn','user\UangMknController@generatePDF');
 
 //Route::post('edit_profil','user\ProfilController@edit');
 

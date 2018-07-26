@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <!-- ribbon lembur-->
-                        <!-- <div class="ribbon-wrapper card">
+                        <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-success">Lembur</div>
                             <p class="ribbon-content">
                                 <ul>
@@ -46,26 +46,15 @@
                                     
                                 </ul>
                             </p>
-                        </div> -->
+                        </div>
 
                         <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-danger">Telat</div>
                             <p class="ribbon-content">
                                 <ul>
-                                    @foreach($absensi as $data)
-                                    <?php if ($data['SCAN_TELAT'] != null): 
-
-                                        
-                                        $jam_masuk = strtotime("07:00:00");
-                                        $jam_telat = strtotime($data['SCAN_TELAT']);
-
-                                        $telat =  round(abs($jam_masuk - $jam_telat) / 60,2);
-                                        
-                                    ?>
-                                        <li>{{$telat}} menit | {{$data['TGL_ABSEN']}}</li>
-                                    <?php endif ?>
-                                    @endforeach
-                                    
+                                    <li>30 menit 2/1/2017</li>
+                                    <li>10 menit 5/1/2017</li>
+                                    <li>5 menit 13/1/2017</li>
                                 </ul>
                             </p>
                         </div>
@@ -75,25 +64,15 @@
                             <div class="ribbon ribbon-warning">Pulang Cepat</div>
                             <p class="ribbon-content">
                                 <ul>
-                                    @foreach($absensi as $data)
-                                    <?php if ($data['SCAN_PUL_CPT'] != null): 
-
-                                        
-                                        $jam_pulang = strtotime("15:30:00");
-                                        $jam_pul_cpt = strtotime($data['SCAN_PUL_CPT']);
-
-                                        $pulang =  round(abs($jam_pulang - $jam_pul_cpt) / 60,2);
-                                        
-                                    ?>
-                                        <li>{{$pulang}} menit | {{$data['TGL_ABSEN']}}</li>
-                                    <?php endif ?>
-                                    @endforeach
+                                    <li>10 menit 2/1/2017</li>
+                                    <li>5 menit 5/1/2017</li>
+                                    <li>10 menit 13/1/2017</li>
                                 </ul>
                             </p>
                         </div>
 
                         <!-- ribbon pulang Cepat -->
-                        <!-- <div class="ribbon-wrapper card">
+                        <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-info">Telat Senam</div>
                             <p class="ribbon-content">
                                 <ul>
@@ -101,10 +80,10 @@
                                    
                                 </ul>
                             </p>
-                        </div> -->
+                        </div>
 
                          <!-- Tidak Absen -->
-                        <!-- <div class="ribbon-wrapper card">
+                        <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-primary">Tidak Ikut Senam</div>
                             <p class="ribbon-content">
                                 <ul>
@@ -112,13 +91,13 @@
                                     
                                 </ul>
                             </p>
-                        </div> -->
+                        </div>
                         <!-- Tidak Absen -->
                         <div class="ribbon-wrapper card">
                             <div class="ribbon ribbon-default">Tidak Absen</div>
                             <p class="ribbon-content">
                                 <ul>
-                                    
+                                    <li>20/1/2017</li>
                                     
                                 </ul>
                             </p>
@@ -128,56 +107,7 @@
                     <div class="col-md-9">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Absensi Pribadi</h4>
-                                <h6 class="card-subtitle"></h6>
-                               
-
-                                <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
-                                        <thead>
-                                            <tr>
-                                                <!-- <th>No</th> -->
-                                                
-                                                <!-- <th>Nama</th> -->
-                                                <th>Tanggal</th>
-                                                <th>Scan Masuk</th>
-                                                <th>Scan Pulang</th>
-                                                <th>Scan Telat</th>
-                                                <th>Scan Pul Cpt</th>
-                                                <!-- <th>Scan Lembur</th> -->
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                @foreach($absensi as $data)
-                                            <tr>
-                                                <td>{{$data['TGL_ABSEN']}}</td>
-                                                <td>{{$data['SCAN_MASUK']}}</td>
-                                                <td>{{$data['SCAN_KELUAR']}}</td>
-                                                <td><span style="background-color: #F2DEDE">{{$data['SCAN_TELAT']}}</span></td>
-                                                <td><span style="background-color: #F2DEDE">{{$data['SCAN_PUL_CPT']}}</span></td>
-                                                <!-- <td>{{$data['SCAN_LEMBUR']}}</td> -->
-                                                
-                                            </tr>
-                                            @endforeach 
-                                            
-                                            
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <!-- <button class="btn btn-outline-success waves-effect waves-light" type="button"><span class="btn-label"><i class="mdi mdi-file-excel"></i></span>Excell</button> -->
-                                                </td>
-                                                <td colspan="7">
-                                                    <div class="text-right">
-                                                        <ul class="pagination"> </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
+                                <div id="calendar"></div>
                             </div>
                         </div>
                     </div>
