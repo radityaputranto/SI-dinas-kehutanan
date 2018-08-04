@@ -25,6 +25,7 @@
     <!-- clock [picker] -->
     <link href="{{ asset('dashboard/plugins/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
     
+    {!! Charts::styles() !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -191,18 +192,21 @@
 
                         
                         <li>
-                            <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan Pegawai</span></a>
-                            <ul aria-expanded="false" class="collapse">
+                            <a href="{{url('tunjagan_pegawai')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">Tunjangan Pegawai</span></a>
+                            <!-- <a class="has-arrow "  href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan Pegawai</span></a> -->
+                            <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('list_tun_daerah')}}">Daerah</a></li>
                                 <li><a href="{{url('list_tun_prestasi')}}">Prestasi</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
-                        <li>
-                            <a  href="{{url('list_tunjangan')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
-                        </li>                        
                         <li>
                             <a href="{{url('list_uang_mkn')}}" aria-expanded="false"><i class="mdi mdi-food"></i><span class="hide-menu">List Uang Makan</span></a>
                         </li>
+
+                        <li>
+                            <a  href="{{url('list_tunjangan')}}" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu">List Tunjangan</span></a>
+                        </li>                        
+                        
                         <!-- <li>
                             <a href="{{url('add_event')}}" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">Tambah Event</span></a>
                         </li> -->
@@ -219,8 +223,9 @@
                             <a href="{{url('data_potongan')}}" aria-expanded="false"><i class="mdi mdi-cash-usd"></i><span class="hide-menu">Potongan</span></a>
                         </li>
                         <li>
-                            <a href="{{url('admin_profil')}}" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">Admin Profil</span></a>
+                            <a href="{{url('admin_kinerja')}}" aria-expanded="false"><i class="mdi mdi-chart-areaspline"></i><span class="hide-menu">Kinerja Pegawai</span></a>
                         </li>
+
                         
                         
                     </ul>
@@ -372,6 +377,11 @@
             $('input').prop('readOnly', true);
         }
         </script>
+
+        <script src="https:/cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset=utf-8></script>
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset=utf-8></script>
+    <script src="https:/cdn.jsdelivr.net/npm/fusioncharts@3.12.2/fusioncharts.js" charset=utf-8></script>
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js" charset=utf-8></script>
     @include('sweet::alert')
 </body>
 

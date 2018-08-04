@@ -93,6 +93,13 @@
                                                     <td class="text-right">-Rp. {{$data['denda_pul_cpt']/$countPulang}} </td>
                                                     <td class="text-right">-Rp. {{$data['denda_pul_cpt']}}</td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td>Tambahan</td>
+                                                    <td class="text-right"> {{$countLembur}} Menit</td>
+                                                    <td class="text-right">+Rp. {{$data['tambahan_lembur']/$countLembur}} </td>
+                                                    <td class="text-right">+Rp. {{$data['tambahan_lembur']}}</td>
+                                                </tr>
                                                 @endforeach 
                                             
                                             </tbody>
@@ -101,8 +108,8 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="pull-right m-t-30 text-right">
-                                        <p>Sub Total Tunjangan Daerah : Rp. {{$data['DAERAH_AWAL']-$data['denda_telat']-$data['denda_pul_cpt']}}</p>
-                                        <p>PPH (5%) : Rp. {{($data['DAERAH_AWAL']-$data['denda_telat']-$data['denda_pul_cpt'])*$data['PPH']}} </p>
+                                        <p>Sub Total Tunjangan Daerah : Rp. {{$data['DAERAH_AWAL']-$data['denda_telat']-$data['denda_pul_cpt']+$data['tambahan_lembur']}}</p>
+                                        <p>PPH (5%) : Rp. {{($data['DAERAH_AWAL']-$data['denda_telat']-$data['denda_pul_cpt']+$data['tambahan_lembur'])*$data['PPH']}} </p>
                                         <hr>
                                         <h3><b>Total :</b> Rp. {{$data['TUNJANGAN_DAERAH']}}</h3>
                                     </div>

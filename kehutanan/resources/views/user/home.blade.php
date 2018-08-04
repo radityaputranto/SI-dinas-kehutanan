@@ -89,6 +89,7 @@
                                                 <th>Tanggal</th>
                                                 <th>Scan Masuk</th>
                                                 <th>Scan Pulang</th>
+                                                <th>Scan Lembur</th>
                                                 <th>Scan Telat</th>
                                                 <th>Scan Pul Cpt</th>
                                                 <!-- <th>Scan Lembur</th> -->
@@ -102,6 +103,7 @@
                                                 <td>{{$data['TGL_ABSEN']}}</td>
                                                 <td>{{$data['SCAN_MASUK']}}</td>
                                                 <td>{{$data['SCAN_KELUAR']}}</td>
+                                                <td><span style="background-color: #DFF0D8">{{$data['SCAN_LEMBUR']}}</span></td>
                                                 <td><span style="background-color: #F2DEDE">{{$data['SCAN_TELAT']}}</span></td>
                                                 <td><span style="background-color: #F2DEDE">{{$data['SCAN_PUL_CPT']}}</span></td>
                                                 <!-- <td>{{$data['SCAN_LEMBUR']}}</td> -->

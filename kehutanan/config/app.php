@@ -187,6 +187,10 @@ return [
          //pdf
          Barryvdh\DomPDF\ServiceProvider::class,
 
+         //chart
+         ConsoleTVs\Charts\ChartsServiceProvider::class,
+
+
     ],
 
     /*
@@ -243,6 +247,7 @@ return [
 
         //pdf
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
     ],
 
 ];

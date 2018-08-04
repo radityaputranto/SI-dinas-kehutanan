@@ -58,11 +58,14 @@ Route::post('import_surat','user\SuratController@store');
 Route::get('pdf_daerah','user\TunDaerahController@generatePDF');
 Route::get('pdf_prestasi','user\TunPrestasiController@generatePDF');
 Route::get('pdf_uang_mkn','user\UangMknController@generatePDF');
+Route::get('kinerja','user\KinerjaController@index');
+
 
 //Route::post('edit_profil','user\ProfilController@edit');
 
 /*admin route*/
 Route::resource('emp', 'Admin\AdminEmpController');
+
 Route::get('add_emp','Admin\AdminEmpController@create');
 
 /*export excel admin*/
@@ -70,6 +73,7 @@ Route::get('export_pegawai','Admin\AdminEmpController@export_excel');
 Route::get('export_potongan','Admin\PotonganController@export_excel');
 Route::get('export_lembur','Admin\LemburController@export_excel');
 Route::get('export_tunjangan','Admin\TunjanganController@export_excel');
+Route::get('export_tunjangan_pegawai','Admin\ListTunjanganController@export_excel');
 
 Route::resource('absen', 'Admin\AdminAbsensiController');
 Route::get('list_absen','Admin\AdminAbsensiController@index');
@@ -106,6 +110,13 @@ Route::get('list_telat','admin\ListTelatController@index');
 Route::get('list_pul_cpt','admin\ListPulCptController@index');
 Route::get('list_tdk_absen','admin\ListTAbsenController@index');
 Route::get('list_tdk_senam','admin\ListTSenamController@index');
-Route::get('list_tun_daerah','admin\ListTunDaerahController@index');
-Route::get('list_tun_prestasi','admin\ListTunPresController@index');
+
+//Route::get('list_tun_daerah','admin\ListTunDaerahController@index');
+//Route::get('list_tun_prestasi','admin\ListTunPresController@index');
+Route::get('tunjagan_pegawai','admin\ListTunjanganController@index');
 Route::get('list_uang_mkn','admin\ListUangMknController@index');
+
+
+Route::get('admin_kinerja','admin\AdminKinerjaController@index');
+
+

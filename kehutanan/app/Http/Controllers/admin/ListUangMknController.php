@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\TunjanganEmp;
 
 class ListUangMknController extends Controller
 {
@@ -14,7 +15,8 @@ class ListUangMknController extends Controller
      */
     public function index()
     {
-        return view('admin.list_uang_mkn');
+        $tunjangan = TunjanganEmp::all()->toArray();
+        return view('admin.list_uang_mkn',compact('tunjangan'));
     }
 
     /**

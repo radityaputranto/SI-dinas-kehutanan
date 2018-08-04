@@ -62,7 +62,7 @@ th {
       </div>
 
       <div class="col-7" style="">
-        <h1 class="document-type display-4">Tunjagan Daerah</h1>
+        <h1 class="document-type display-4">Tunjangan Daerah</h1>
         
       </div>
     </div>
@@ -105,7 +105,7 @@ th {
       </thead>
       
         <tr>
-          <td>Tunjagnan Daerah</td>
+          <td>Tunjangan Daerah</td>
           <td>1</td>
           <td>Rp. {{$data['DAERAH_AWAL']}}</td>
           <td>Rp. {{$data['DAERAH_AWAL']}}</td>

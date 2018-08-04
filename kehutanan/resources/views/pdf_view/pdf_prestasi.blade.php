@@ -62,7 +62,7 @@ th {
       </div>
 
       <div class="col-7" style="">
-        <h1 class="document-type display-4">Tunjagan Prestasi</h1>
+        <h1 class="document-type display-4">Tunjangan Prestasi</h1>
         
       </div>
     </div>
@@ -90,7 +90,7 @@ th {
     </div>
     <br>
     <br>
-    <h6>Detail tunjagnan yang di terima </h6>
+    <h6>Detail tunjangan yang di terima </h6>
     <br>
     @foreach($tun_emp as $data)
     <table class="table table-striped">
@@ -105,7 +105,7 @@ th {
       </thead>
       
         <tr>
-          <td>Tunjagnan Prestasi</td>
+          <td>Tunjangan Prestasi</td>
           <td>1</td>
           <td>Rp. {{$data['PRESTASI_AWAL']}}</td>
           <td>Rp. {{$data['PRESTASI_AWAL']}}</td>

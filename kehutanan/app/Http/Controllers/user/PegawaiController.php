@@ -8,6 +8,7 @@ use App\Absensi;
 use App\Tunjangan;
 use App\Potongan;
 use App\TunjanganEmp;
+use App\Lembur;
 
 class PegawaiController extends Controller
 {
@@ -39,10 +40,12 @@ class PegawaiController extends Controller
 
         $telat = $absensi->where('SCAN_TELAT','!=',null);
         $pulang = $absensi->where('SCAN_PUL_CPT','!=',null);
+        $lembur = $absensi->where('SCAN_LEMBUR','!=',null);
 
 
         $countTelat = 0;
         $countPulang = 0;
+        $countLembur = 0;
 
         foreach ($telat as $t) {
             
@@ -65,15 +68,32 @@ class PegawaiController extends Controller
             //echo $pulang .'<br>';
             $countPulang += $pulang;
         }
+
+        foreach ($lembur as $l) {
+            
+
+            $jam_lembur = strtotime("18:00:00");
+            $jam_pul_lembur = strtotime($l->SCAN_LEMBUR);
+
+            $lembur =  round(abs($jam_pul_lembur - $jam_lembur) / 60,2);
+            //echo $pulang .'<br>';
+            $countLembur += $lembur;
+        }
+
+
             
             $gol =  explode(' ', $golongan) ;
             $potongan_emp= Potongan::where('golongan',$gol[0])->first();
+            $tambahan_emp= Lembur::where('golongan',$gol[0])->first();
             
+            //dd($tambahan_emp['nominal']);
 
             $denda_telat= $countTelat*$potongan_emp['telat_psw_1'];
             $denda_pul_cpt= $countPulang*$potongan_emp['telat_psw_1'];
-
             $denda_total= $denda_telat+$denda_pul_cpt;
+
+            $tambahan= $countLembur*$tambahan_emp['nominal'];
+            //dd($tambahan);
 
             
 
@@ -111,8 +131,8 @@ class PegawaiController extends Controller
 
 
             //final tunjangan
-            $tun_prestasi = $tun_prestasi - $denda_total;
-            $tun_daerah = $tun_daerah - $denda_total;
+            $tun_prestasi = $tun_prestasi - $denda_total + $tambahan;
+            $tun_daerah = $tun_daerah - $denda_total + $tambahan;
 
             //kali pph
             $pph_prestasi = $tun_prestasi*$pph;
@@ -139,6 +159,7 @@ class PegawaiController extends Controller
             'PPH' => $pph,
             'denda_telat' => $denda_telat,
             'denda_pul_cpt' => $denda_pul_cpt,
+            'tambahan_lembur' => $tambahan,
             ]);
      
             //$TunEmp->save();
@@ -161,10 +182,11 @@ class PegawaiController extends Controller
         $absensi = Absensi::where('NIP_EMP',$emp_id)->get();
         $telat = $absensi->where('SCAN_TELAT','!=',null);
         $pulang = $absensi->where('SCAN_PUL_CPT','!=',null);
-
+        $lembur = $absensi->where('SCAN_LEMBUR','!=',null);
 
         $countTelat = 0;
         $countPulang = 0;
+        $countLembur = 0;
 
         foreach ($telat as $t) {
             
@@ -187,8 +209,18 @@ class PegawaiController extends Controller
             //echo $pulang .'<br>';
             $countPulang += $pulang;
         }
+        foreach ($lembur as $l) {
+            
 
-        return view('user.tun_prestasi',compact('tun_emp','countTelat','countPulang'));
+            $jam_lembur = strtotime("18:00:00");
+            $jam_pul_lembur = strtotime($l->SCAN_LEMBUR);
+
+            $lembur =  round(abs($jam_pul_lembur - $jam_lembur) / 60,2);
+            //echo $pulang .'<br>';
+            $countLembur += $lembur;
+        }
+
+        return view('user.tun_prestasi',compact('tun_emp','countTelat','countPulang','countLembur'));
     }
 
     public function tun_daerah(){
@@ -198,10 +230,12 @@ class PegawaiController extends Controller
         $absensi = Absensi::where('NIP_EMP',$emp_id)->get();
         $telat = $absensi->where('SCAN_TELAT','!=',null);
         $pulang = $absensi->where('SCAN_PUL_CPT','!=',null);
+         $lembur = $absensi->where('SCAN_LEMBUR','!=',null);
 
 
         $countTelat = 0;
         $countPulang = 0;
+        $countLembur = 0;
 
         foreach ($telat as $t) {
             
@@ -224,8 +258,18 @@ class PegawaiController extends Controller
             //echo $pulang .'<br>';
             $countPulang += $pulang;
         }
+        foreach ($lembur as $l) {
+            
+
+            $jam_lembur = strtotime("18:00:00");
+            $jam_pul_lembur = strtotime($l->SCAN_LEMBUR);
+
+            $lembur =  round(abs($jam_pul_lembur - $jam_lembur) / 60,2);
+            //echo $pulang .'<br>';
+            $countLembur += $lembur;
+        }
         //dd($tun_emp);
-        return view('user.tun_daerah',compact('tun_emp','countPulang','countTelat'));
+        return view('user.tun_daerah',compact('tun_emp','countPulang','countTelat','countLembur'));
     }
     public function uang_mkn(){
         $emp_id =  (auth()->user()->NIP_EMP);

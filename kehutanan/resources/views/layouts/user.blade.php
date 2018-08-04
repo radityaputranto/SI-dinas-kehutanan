@@ -23,6 +23,7 @@
     <!-- Footable CSS -->
     <link href="{{ asset('dashboard/plugins/footable/css/footable.core.css')}}" rel="stylesheet">
     <link href="{{ asset('dashboard/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
+    {!! Charts::styles() !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -235,6 +236,9 @@
                         <li>
                             <a href="{{url('surat_ijin')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Surat Izin</span></a>
                         </li>
+                        <li>
+                            <a href="{{url('kinerja')}}" aria-expanded="false"><i class="mdi mdi-chart-areaspline"></i><span class="hide-menu">Kinerja</span></a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -312,6 +316,15 @@
     <script src="{{ asset('dashboard/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript')}}"></script>
     <script src="{{ asset('dashboard/js/footable-init.js')}}"></script>
     <script src="{{ asset('js/sweetalert.min.js')}}"></script>
+
+    
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset=utf-8></script>
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset=utf-8></script>
+    <script src="https:/cdn.jsdelivr.net/npm/fusioncharts@3.12.2/fusioncharts.js" charset=utf-8></script>
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js" charset=utf-8></script>
+    
+
+
 
     @include('sweet::alert')
 </body>
