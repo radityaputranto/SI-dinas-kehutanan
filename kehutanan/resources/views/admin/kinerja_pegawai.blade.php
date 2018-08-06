@@ -45,6 +45,55 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="home" role="tabpanel">
                                     <div class="card-block">
+                                        <center><h3 style="color: #747474;">Jumlah Pegawai</h3></center><hr>
+                                        <div class="row justify-content-center">
+                                            <!-- Column -->
+                                            <div class="col-md-2 col-lg-2 col-xlg-2">
+                                                <div class="card card-inverse " style="background-color:#FFCC57; ">
+                                                    <div class="box  text-center">
+                                                        <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i>{{$jum_pegawai[0]}}</h1>
+                                                        <h6 class="text-white">SKR</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column -->
+                                            <div class="col-md-2 col-lg-2 col-xlg-2">
+                                                <div class="card card-inverse " style="background-color: #FF9E42">
+                                                    <div class="box text-center">
+                                                        <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i>{{$jum_pegawai[1]}}</h1>
+                                                        <h6 class="text-white">PLANO</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column -->
+                                            <div class="col-md-2 col-lg-2 col-xlg-2">
+                                                <div class="card card-inverse " style="background-color: #39A1EA">
+                                                    <div class="box text-center">
+                                                        <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i>{{$jum_pegawai[2]}}</h1>
+                                                        <h6 class="text-white">PHPL</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column -->
+                                            <div class="col-md-2 col-lg-2 col-xlg-2">
+                                                <div class="card card-inverse " style="background-color: #4CBFBF">
+                                                    <div class="box text-center">
+                                                        <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i>{{$jum_pegawai[3]}}</h1>
+                                                        <h6 class="text-white">PKHKA</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column -->
+                                            <div class="col-md-2 col-lg-2 col-xlg-2">
+                                                <div class="card card-inverse " style="background-color: #FF6383">
+                                                    <div class="box text-center">
+                                                        <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i>{{$jum_pegawai[4]}}</h1>
+                                                        <h6 class="text-white">RLPS</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
                                         {!! $chart1->html() !!}
                                         {!! Charts::scripts() !!}
                                          {!! $chart1->script() !!}
@@ -53,7 +102,7 @@
 
                                 <div class="tab-pane active" id="profile" role="tabpanel">
                                     
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-md-6">
                                                 <div class="card-block">
                                                     {!! $chart2->html() !!}
@@ -66,7 +115,12 @@
                                                     {!! $chart3->script() !!}
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
+
+                                        <div class="card-block">
+                                                    {!! $chart2->html() !!}
+                                                    {!! $chart2->script() !!}            
+                                                </div>
                                         
                                         
                                     

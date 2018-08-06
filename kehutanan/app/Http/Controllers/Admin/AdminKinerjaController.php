@@ -5,7 +5,12 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\TunjanganEmp;
+use App\Department;
+use App\Surat;
+
+
 use Charts;
+
 class AdminKinerjaController extends Controller
 {
     /**
@@ -15,6 +20,73 @@ class AdminKinerjaController extends Controller
      */
     public function index()
     {
+
+        //untuk cek jumlah department
+        $department = Department::all()->toArray();
+
+        $jum_pegawai = array();
+        foreach ($department as $dpt) {
+            //dd($dpt['JUM_EMP']);
+            array_push($jum_pegawai, $dpt['JUM_EMP']);
+        }
+        //dd($jum_pegawai);
+
+
+        //untuk cek jumlah surat izin
+        $surat = Surat::all()->toArray();
+        $izin_sakit=0;
+        $dinas_luar=0;
+        $cuti=0;
+        $cuti_hamil=0;
+        foreach ($surat as $data) {
+            
+            switch ($data['jenis']) {
+                case 'Ijin Sakit':
+                    $izin_sakit=$izin_sakit+1;
+                    break;
+                case 'Dinas Luar':
+                    $dinas_luar=$dinas_luar+1;
+                    break;
+                case 'Cuti':
+                    $cuti=$cuti+1;
+                    break;
+                case 'Cuti Hamil':
+                    $cuti_hamil=$cuti_hamil+1;
+                    break;
+                
+            }
+        }
+
+
+        //untuk cek nilai tunjangan
+        $tunjangan = TunjanganEmp::all()->toArray();
+        $tun_prestasi=0;
+        $tun_daerah=0;
+        $uang_mkn=0;
+        $jum_tunjangan = 0;
+
+        foreach ($tunjangan as $tun) {
+            $tun_prestasi = $tun_prestasi + $tun['TUNJANGAN_PRESTASI'];
+            $tun_daerah = $tun_daerah + $tun['TUNJANGAN_DAERAH'];
+            $uang_mkn = $uang_mkn + $tun['UANG_MKN'];
+            $jum_tunjangan = $jum_tunjangan +1;
+        }
+        //rat rata tunjangan pegawai
+        $tun_prestasi = $tun_prestasi / $jum_tunjangan;
+        $tun_daerah = $tun_daerah / $jum_tunjangan;
+        $uang_mkn = $uang_mkn / $jum_tunjangan;
+
+        //pembulatan
+        /*$tun_prestasi = (int)$tun_prestasi;
+        $tun_daerah = (int)$tun_daerah;*/
+
+        //dd($tun_prestasi);
+
+
+
+
+
+
         $chart1 = Charts::multi('bar','material')
                 ->title("Absensi Pegawai")
                 ->dimensions(0,400)
@@ -28,7 +100,7 @@ class AdminKinerjaController extends Controller
                 ->responsive(false)
                 ->labels(['SKR','PLANO','PHPL','PKHKA','RLPS']);
 
-         $chart2 = Charts::create('pie','chartjs')
+         $chart6 = Charts::create('pie','chartjs')
                 ->title("Jumlah Pegawai pada Department")
                 ->labels(['SKR','PLANO','PHPL','PKHKA','RLPS'])
                 ->values([20,10,60,100,60])
@@ -37,6 +109,16 @@ class AdminKinerjaController extends Controller
                 ->width(0)
                 ->height(400)
                 ->colors(["#FFCD56","#FF9F40","#36A2EB","#4BC0C0","#FF6384"]);
+
+        $chart2 = Charts::create('pie','chartjs')
+                ->title("Surat Izin Pegawai")
+                ->labels(['Izin Sakit','Dinas Luar','Cuti','Cuti Hamil'])
+                ->values([$izin_sakit,$dinas_luar,$cuti,$cuti_hamil])
+                ->elementLabel("total Surat")
+                ->responsive(false)
+                ->width(0)
+                ->height(400)
+                ->colors(["#FFCD56","#FF9F40","#36A2EB","#4BC0C0"]);
 
         $chart3 = Charts::create('pie','chartjs')->legend(false)
                 ->title("Persentase Absen Masuk")
@@ -53,12 +135,12 @@ class AdminKinerjaController extends Controller
                 ->dimensions(0,400)
                 //->template("material")
                 ->colors(['#61BBB6', '#DA5C53', '#FFC107','#506F86','#288FB4'])
-                ->dataset('Tunjangan Prestasi',[10,75,71,30,40])
-                ->dataset('Tunjangan Daerah',[5,15,61,40,60])
-                ->dataset('Uang Makan',[20,35,31,50,10])
+                ->dataset('Tunjangan Prestasi',[$tun_prestasi])
+                ->dataset('Tunjangan Daerah',[$tun_daerah])
+                ->dataset('Uang Makan',[$uang_mkn])
                 
                 ->responsive(false)
-                ->labels(['27 Nov 2010', '26 Nov 2011', '24 Nov 2012', '30 Nov 2013', '29 Nov 2014']);
+                ->labels(['Mei 2018']);
 
 //BISA
 
@@ -75,7 +157,7 @@ class AdminKinerjaController extends Controller
                 ->labels(['27 Nov 2010', '26 Nov 2011', '24 Nov 2012', '30 Nov 2013', '29 Nov 2014']);
         
 
-        return view('admin.kinerja_pegawai',compact('chart1','chart2','chart3','chart4'));
+        return view('admin.kinerja_pegawai',compact('jum_pegawai','chart1','chart2','chart3','chart4'));
     }
 
     /**
